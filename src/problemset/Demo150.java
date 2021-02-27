@@ -16,15 +16,27 @@ public class Demo150 {
 
     public int evalRPN(String[] tokens) {
 
-        Deque<Character> deque = new ArrayDeque<>();
-        for (String str : tokens) {
-            for (char c : str.toCharArray()) {
-                if (0 <= c - '0' && c - '0' <= 9){
-
-                }
+        Deque<Integer> stack = new ArrayDeque<>();
+        for (String t : tokens) {
+            switch (t){
+                case "+":
+                    stack.push(stack.pop() + stack.pop());
+                    break;
+                case "-":
+                    int num = stack.pop();
+                    stack.push(stack.pop() - num);
+                    break;
+                case "*":
+                    stack.push(stack.pop() * stack.pop());
+                    break;
+                case "/":
+                    int num2 = stack.pop();
+                    stack.push(stack.pop() / num2);
+                    break;
+                default:
+                    stack.push(Integer.valueOf(t));
             }
         }
-
-        return -1;
+        return stack.pop();
     }
 }
