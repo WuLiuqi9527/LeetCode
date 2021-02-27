@@ -1,31 +1,26 @@
 package problemset;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 /**
- * 给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
- * 示例：
- * 二叉树：[3,9,20,null,null,15,7],
+ * 给定一棵二叉树，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
  * <p>
- * 3
- * / \
- * 9  20
- * /  \
- * 15   7
- * 返回其层序遍历结果：
+ * 示例:
+ * 输入: [1,2,3,null,5,null,4]
+ * 输出: [1, 3, 4]
+ * 解释:
  * <p>
- * [
- * [3],
- * [9,20],
- * [15,7]
- * ]
+ * 1            <---
+ * /   \
+ * 2     3         <---
+ * \     \
+ * 5     4       <---
  *
  * @author hc
  */
-public class Demo102 {
+public class Demo199 {
 
     public class TreeNode {
         int val;
@@ -46,34 +41,30 @@ public class Demo102 {
         }
     }
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<Integer> rightSideView(TreeNode root) {
 
-        List<List<Integer>> lists = new ArrayList<>();
-
+        List<Integer> list = new LinkedList<>();
         if (root == null) {
-            return lists;
+            return list;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
             int count = queue.size();
-            List<Integer> list = new ArrayList<>();
-
-            // list 内元素个数 使用 count 维护
             for (int i = count; i > 0; --i) {
                 TreeNode treeNode = queue.poll();
-                list.add(treeNode.val);
                 if (treeNode.left != null) {
                     queue.add(treeNode.left);
                 }
                 if (treeNode.right != null) {
                     queue.add(treeNode.right);
                 }
+                if (i == 1) {
+                    list.add(treeNode.val);
+                }
             }
-            lists.add(list);
         }
-
-        return lists;
+        return list;
     }
 }

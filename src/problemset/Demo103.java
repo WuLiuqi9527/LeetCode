@@ -1,31 +1,30 @@
 package problemset;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 /**
- * 给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节点）。
- * 示例：
- * 二叉树：[3,9,20,null,null,15,7],
+ * 给定一个二叉树，返回其节点值的锯齿形层序遍历。
+ * 即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行。
  * <p>
+ * 例如：
+ * 给定二叉树 [3,9,20,null,null,15,7],
  * 3
  * / \
  * 9  20
  * /  \
  * 15   7
- * 返回其层序遍历结果：
- * <p>
+ * 返回锯齿形层序遍历如下：
  * [
  * [3],
- * [9,20],
+ * [20,9],
  * [15,7]
  * ]
  *
  * @author hc
  */
-public class Demo102 {
+public class Demo103 {
 
     public class TreeNode {
         int val;
@@ -46,9 +45,9 @@ public class Demo102 {
         }
     }
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
 
-        List<List<Integer>> lists = new ArrayList<>();
+        List<List<Integer>> lists = new LinkedList<>();
 
         if (root == null) {
             return lists;
@@ -56,14 +55,22 @@ public class Demo102 {
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        while (!queue.isEmpty()) {
-            int count = queue.size();
-            List<Integer> list = new ArrayList<>();
 
-            // list 内元素个数 使用 count 维护
-            for (int i = count; i > 0; --i) {
+        boolean level = true;
+        while (!queue.isEmpty()) {
+
+            int count = queue.size();
+            List<Integer> list = new LinkedList<>();
+
+            for (int i = 0; i < count; i++) {
+
                 TreeNode treeNode = queue.poll();
-                list.add(treeNode.val);
+                if (level) {
+                    list.add(treeNode.val);
+                } else {
+                    list.add(0, treeNode.val);
+                }
+
                 if (treeNode.left != null) {
                     queue.add(treeNode.left);
                 }
@@ -71,9 +78,9 @@ public class Demo102 {
                     queue.add(treeNode.right);
                 }
             }
+            level = !level;
             lists.add(list);
         }
-
         return lists;
     }
 }
