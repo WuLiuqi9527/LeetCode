@@ -44,6 +44,6 @@ public class Demo220 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Demo220().containsNearbyAlmostDuplicate(new int[]{1, 5, 9, 1, 5, 9}, 2, 3));
+        System.out.println(new Demo220().containsNearbyAlmostDuplicate(new int[]{2147483646, 2147483647}, 3, 3));
     }
 }
