@@ -13,12 +13,14 @@ import java.util.List;
 public class Demo17 {
 
     private final String[] letters = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-    
+
     List<String> res = new ArrayList<>();
 
     public List<String> letterCombinations(String digits) {
-        if (digits == null || digits.length() == 0){return res;}
-        
+        if (digits == null || digits.length() == 0) {
+            return res;
+        }
+
         findCombination(digits, 0, "");
 
         return res;
@@ -26,15 +28,15 @@ public class Demo17 {
 
     private void findCombination(String digits, int index, String s) {
 
-        if (index == digits.length()){
+        if (index == digits.length()) {
             res.add(s);
             return;
         }
 
         char c = digits.charAt(index);
         String letter = letters[c - '2'];
-        for (char ch:letter.toCharArray()){
-            findCombination(digits, index+1,s + ch);
+        for (char ch : letter.toCharArray()) {
+            findCombination(digits, index + 1, s + ch);
         }
         return;
     }
