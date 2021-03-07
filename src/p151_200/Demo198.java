@@ -27,15 +27,15 @@ public class Demo198 {
             return 0;
         }
 
-        int[] memo = new int[len];
-        memo[0] = nums[0];
+        int[] dp = new int[len];
+        dp[0] = nums[0];
         for (int i = 1; i < len; i++) {
             for (int j = i; j >= 0; j--) {
-                memo[i] = Math.max(memo[i], nums[j] + (j - 2 >= 0 ? memo[j - 2] : 0));
+                dp[i] = Math.max(dp[i], nums[j] + (j - 2 >= 0 ? dp[j - 2] : 0));
             }
         }
 
-        return memo[len - 1];
+        return dp[len - 1];
     }
 
     public static void main(String[] args) {
