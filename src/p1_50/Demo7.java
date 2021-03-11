@@ -19,7 +19,7 @@ public class Demo7 {
 
         int res = 0;
         while (x != 0) {
-
+            // res 溢出
             if (res * 10 / 10 != res) {
                 return 0;
             }
