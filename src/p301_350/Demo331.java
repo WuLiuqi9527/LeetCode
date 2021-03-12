@@ -45,14 +45,15 @@ public class Demo331 {
             } else {
                 ++num;
             }
+            // 提前小于 1 的也不是二叉树
             if (num < 1) {return false;}
         }
         return num == 1 ? true : false;
     }
 
     public static void main(String[] args) {
-//        System.out.println(new Demo331().isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
-//        System.out.println(new Demo331().isValidSerialization("1,#"));
+        System.out.println(new Demo331().isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
+        System.out.println(new Demo331().isValidSerialization("1,#"));
         System.out.println(new Demo331().isValidSerialization("9,#,92,#,#"));
     }
 }
