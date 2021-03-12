@@ -5,7 +5,7 @@ package p1_50;
  * <p>
  * 8. 字符串转换整数 (atoi)
  * <p>
- * 请你来实现一个atoi函数，使其能将字符串转换成整数。
+ * 请你来实现一个 atoi 函数，使其能将字符串转换成整数。
  * <p>
  * 首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。接下来的转化规则如下：
  * <p>
@@ -47,7 +47,7 @@ public class Demo8 {
                 break;
             }
         }
-        return (state / 2 == 1) ? -res : res;
+        return ((state & 1) == 0) ? -res : res;
     }
 
     public static void main(String[] args) {
