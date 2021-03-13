@@ -61,6 +61,7 @@ public class Demo13 {
             case 'C':return 100;
             case 'D':return 500;
             case 'M':return 1000;
+            default:break;
         }
         return 0;
     }
