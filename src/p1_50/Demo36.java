@@ -24,6 +24,9 @@ public class Demo36 {
             for (int j = 0; j < 9; j++) {
                 if (board[i][j] != '.') {
                     int num = board[i][j] - '1';
+                    // (i, j) 位于 (i/3, j/3)的 九宫格中
+                    // 其在当前九宫格中的位置索引为 (i/3) * 3 + (j/3)
+                    // 假设 (7, 7) 是位于右下角 (2, 2)的九宫格中， 它在该九宫格中第二行第二列，则其索引 为 3+2 = 5
                     int k = (i / 3) * 3 + j / 3;
 
                     if (row[i][num] || col[j][num] || box[k][num]){
