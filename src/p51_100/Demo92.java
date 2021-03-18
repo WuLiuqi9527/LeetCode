@@ -14,7 +14,7 @@ package p51_100;
  */
 public class Demo92 {
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
@@ -58,5 +58,41 @@ public class Demo92 {
         superior.next = pre;
 
         return dummyHead.next;
+    }
+
+    public ListNode reverseBetween2(ListNode head, int left, int right) {
+
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+
+        ListNode pre = dummy;
+        // left 是从 1 开始计算的
+        for (int i = 1; i < left; i++) {
+            pre = pre.next;
+        }
+
+        head = pre.next;
+        for (int i = left; i < right; i++) {
+            ListNode next = head.next;
+
+            head.next = next.next;
+            next.next = pre.next;
+            pre.next = next;
+        }
+
+        return dummy.next;
+    }
+
+    public static void main(String[] args) {
+        ListNode root = new ListNode(1,new ListNode(2, new ListNode(3,new ListNode(4, new ListNode(5)))));
+        ListNode list = new Demo92().reverseBetween2(root, 2,4);
+
+        StringBuilder str = new StringBuilder();
+        while (list.next != null){
+            str.append(list.val + "->");
+            list = list.next;
+        }
+        str.append(list.val);
+        System.out.println(str);
     }
 }
