@@ -14,7 +14,7 @@ package p51_100;
  */
 public class Demo92 {
 
-    public static class ListNode {
+    public class ListNode {
         int val;
         ListNode next;
 
@@ -81,18 +81,5 @@ public class Demo92 {
         }
 
         return dummy.next;
-    }
-
-    public static void main(String[] args) {
-        ListNode root = new ListNode(1,new ListNode(2, new ListNode(3,new ListNode(4, new ListNode(5)))));
-        ListNode list = new Demo92().reverseBetween2(root, 2,4);
-
-        StringBuilder str = new StringBuilder();
-        while (list.next != null){
-            str.append(list.val + "->");
-            list = list.next;
-        }
-        str.append(list.val);
-        System.out.println(str);
     }
 }
