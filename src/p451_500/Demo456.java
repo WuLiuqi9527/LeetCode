@@ -31,18 +31,18 @@ public class Demo456 {
         //min[i]表示 nums[0]到nums[i]的最小值
         int[] min = new int[len];
         min[0] = nums[0];
-        for(int i=1; i<len; i++){
-            min[i] = Math.min(min[i-1], nums[i]);
+        for (int i = 1; i < len; i++) {
+            min[i] = Math.min(min[i - 1], nums[i]);
         }
         Deque<Integer> stack = new LinkedList<>();
-        stack.push(nums[len-1]);
-        for(int j=len-2; j>=1; j--){
-            if(nums[j]>min[j]){
-                while(!stack.isEmpty() && stack.peek()<=min[j]){
+        stack.push(nums[len - 1]);
+        for (int j = len - 2; j >= 1; j--) {
+            if (nums[j] > min[j]) {
+                while (!stack.isEmpty() && stack.peek() <= min[j]) {
                     stack.pop();
                 }
                 //此时栈顶元素一定大于 min[j]
-                if(!stack.isEmpty() && nums[j]>stack.peek()){
+                if (!stack.isEmpty() && nums[j] > stack.peek()) {
                     return true;
                 }
                 stack.push(nums[j]);
