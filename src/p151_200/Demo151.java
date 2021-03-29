@@ -64,11 +64,11 @@ public class Demo151 {
 
     public String reverseWords3(String s) {
         StringBuilder sb = new StringBuilder();
-        getReversewords(s, sb, 0, false);
+        getReverseWords(s, sb, 0, false);
         return sb.toString();
     }
 
-    private void getReversewords(String s, StringBuilder sb, int start, boolean flag) {
+    private void getReverseWords(String s, StringBuilder sb, int start, boolean flag) {
         while (start < s.length() && s.charAt(start) == ' ') {
             ++start;
         }
@@ -81,7 +81,7 @@ public class Demo151 {
         while (end < s.length() && s.charAt(end) != ' ') {
             ++end;
         }
-        getReversewords(s, sb, end, true);
+        getReverseWords(s, sb, end, true);
         sb.append(s.substring(start, end));
 
         if (flag) {
