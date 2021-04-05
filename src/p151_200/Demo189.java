@@ -24,14 +24,12 @@ public class Demo189 {
      * 时间复杂度：O(kn)
      * 空间复杂度：O(1)
      */
-    public void rotate_1(int[] nums, int k) {
-        int n = nums.length;
-        k %= n;
+    public void rotate1(int[] nums, int k) {
+        int len = nums.length;
+        k %= len;
         for (int i = 0; i < k; i++) {
-            int temp = nums[n - 1];
-            for (int j = n - 1; j > 0; j--) {
-                nums[j] = nums[j - 1];
-            }
+            int temp = nums[len - 1];
+            System.arraycopy(nums, 0, nums, 1, len - 1);
             nums[0] = temp;
         }
     }
@@ -41,12 +39,12 @@ public class Demo189 {
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      */
-    public void rotate_2(int[] nums, int k) {
-        int n = nums.length;
-        k %= n;
-        reverse(nums, 0, n - 1);
+    public void rotate2(int[] nums, int k) {
+        int len = nums.length;
+        k %= len;
+        reverse(nums, 0, len - 1);
         reverse(nums, 0, k - 1);
-        reverse(nums, k, n - 1);
+        reverse(nums, k, len - 1);
     }
 
 
@@ -63,13 +61,13 @@ public class Demo189 {
      * 时间复杂度：O(n)
      * 空间复杂度：O(1)
      */
-    public void rotate_3(int[] nums, int k) {
-        int n = nums.length;
-        k %= n;
-        // 第一次交换完毕后，前 k 位数字位置正确，后 n-k 位数字中最后 k 位数字顺序错误，继续交换
-        for (int start = 0; start < nums.length && k != 0; n -= k, start += k, k %= n) {
+    public void rotate3(int[] nums, int k) {
+        int len = nums.length;
+        k %= len;
+        // 第一次交换完毕后，前 k 位数字位置正确，后 len-k 位数字中最后 k 位数字顺序错误，继续交换
+        for (int start = 0; start < len && k != 0; len -= k, start += k, k %= len) {
             for (int i = 0; i < k; i++) {
-                swap(nums, start + i, nums.length - k + i);
+                swap(nums, start + i, len - k + i);
             }
         }
     }
