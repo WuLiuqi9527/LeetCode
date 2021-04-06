@@ -20,14 +20,14 @@ public class Demo80 {
         }
 
         int duplicateNum = 2;
-        int len = 0;
+        int index = 0;
         for (int num : nums) {
-            if (len < 2 || num > nums[len - duplicateNum]) {
-                nums[len++] = num;
+            if (index < 2 || num > nums[index - duplicateNum]) {
+                nums[index++] = num;
             }
         }
 
-        return len;
+        return index;
     }
 
     public static void main(String[] args) {
