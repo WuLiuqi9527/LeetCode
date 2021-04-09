@@ -48,7 +48,9 @@ public class Demo207 {
             adj[i] = new HashSet<>();
         }
         for (int[] p : prerequisites) {
+            // p[0] 入度 +1
             ++in[p[0]];
+            // p[0] 被 p[1] 指
             adj[p[1]].add(p[0]);
         }
 
@@ -74,5 +76,9 @@ public class Demo207 {
         }
 
         return cnt == numCourses;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Demo207().canFinish(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}}));
     }
 }
