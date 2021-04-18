@@ -1,4 +1,4 @@
-package p1001_1050;
+package others;
 
 import java.util.ArrayList;
 import java.util.List;

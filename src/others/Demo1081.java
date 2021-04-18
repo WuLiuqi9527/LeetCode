@@ -1,4 +1,4 @@
-package p1051_1100;
+package others;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,7 +1,4 @@
-package p1001_1050;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package others;
 
 /**
  * 给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。
