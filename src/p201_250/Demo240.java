@@ -27,22 +27,23 @@ public class Demo240 {
      * 若最后矩阵减小为空，则说明不存在
      */
     public boolean searchMatrix(int[][] matrix, int target) {
+        if (matrix != null && matrix.length > 0) {
+            int m = matrix.length;
+            int n = matrix[0].length;
 
-        int m = matrix.length;
-        int n = matrix[0].length;
+            if (m == 0 || n == 0) {
+                return false;
+            }
 
-        if (m == 0 || n == 0) {
-            return false;
-        }
-
-        int row = m - 1, col = 0;
-        while (row >= 0 && col < n) {
-            if (matrix[row][col] > target) {
-                --row;
-            } else if (matrix[row][col] < target) {
-                ++col;
-            } else {
-                return true;
+            int row = m - 1, col = 0;
+            while (row >= 0 && col < n) {
+                if (matrix[row][col] > target) {
+                    --row;
+                } else if (matrix[row][col] < target) {
+                    ++col;
+                } else {
+                    return true;
+                }
             }
         }
         return false;
