@@ -29,10 +29,6 @@ public class Demo79 {
 
     /**
      * 二维回溯
-     *
-     * @param board
-     * @param word
-     * @return
      */
     public boolean exist(char[][] board, String word) {
 
@@ -52,12 +48,12 @@ public class Demo79 {
             return true;
         }
 
-        boolean unreasonable = i < 0 || i > board.length || j < 0 || j > board[0].length;
+        boolean unreasonable = i < 0 || i >= board.length || j < 0 || j >= board[0].length;
         if (unreasonable || board[i][j] != word.charAt(k)) {
             return false;
         }
 
-        // 使其超过 ASCII 码范围
+        // 使其超过 ASCII 码范围 -> 不被重复选择
         board[i][j] += 256;
         boolean res = search(board, word, i - 1, j, k + 1) || search(board, word, i + 1, j, k + 1) || search(board, word, i, j - 1, k + 1) || search(board, word, i, j - 1, k + 1);
         board[i][j] -= 256;
