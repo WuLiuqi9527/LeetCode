@@ -26,6 +26,7 @@ public class Offer13 {
     private int dfs(int i, int j, int m, int n, int k, boolean[][] used) {
         boolean unreasonable = i < 0 || i >= m || j < 0 || j >= n;
         // 行坐标和列坐标的数位之和大于 k
+        // 1 <= n,m <= 100 所以 i / 10 + i % 10 + j / 10 + j % 10 正确
         if (unreasonable || (i / 10 + i % 10 + j / 10 + j % 10) > k || used[i][j]) {
             return 0;
         }
