@@ -12,21 +12,8 @@ package p301_350;
  */
 public class Demo343 {
 
-//    public int integerBreak(int n) {
-//        return breakInteger(n);
-//    }
-
     public int integerBreak(int n) {
-
-        int[] memo = new int[n + 1];
-        memo[1] = 1;
-        for (int i = 2; i <= n; i++) {
-            for (int j = 1; j <= i - 1; j++) {
-                memo[i] = Math.max(memo[i], Math.max(j * (i - j), j * memo[i - j]));
-            }
-        }
-
-        return memo[n];
+        return breakInteger(n);
     }
 
     private int breakInteger(int n) {
@@ -41,12 +28,25 @@ public class Demo343 {
         }
 
         int res = Integer.MIN_VALUE;
-        for (int i = 1; i <= n - 1; i++) {
+        for (int i = 1; i < n; i++) {
             res = Math.max(res, Math.max(i * (n - i), i * breakInteger(n - i)));
         }
 
         memo[n] = res;
         return res;
+    }
+
+    public int integerBreak2(int n) {
+
+        int[] memo = new int[n + 1];
+        memo[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            for (int j = 1; j <= i - 1; j++) {
+                memo[i] = Math.max(memo[i], Math.max(j * (i - j), j * memo[i - j]));
+            }
+        }
+
+        return memo[n];
     }
 
     public static void main(String[] args) {
