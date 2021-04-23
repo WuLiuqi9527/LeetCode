@@ -6,26 +6,15 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
- * 例如:
- * 给定二叉树: [3,9,20,null,null,15,7],
- * 3
- * / \
- * 9  20
- * /  \
- * 15   7
- * 返回其层次遍历结果：
- * [
- * [3],
- * [9,20],
- * [15,7]
- * ]
+ * 请实现一个函数按照之字形顺序打印二叉树，
+ * 即第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，
+ * 第三行再按照从左到右的顺序打印，其他行以此类推。
  * 提示：
  * 节点总数 <= 1000
  *
  * @author hc
  */
-public class Offer32Two {
+public class Offer32Three {
 
     public class TreeNode {
         int val;
@@ -39,11 +28,12 @@ public class Offer32Two {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
 
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> lists = new ArrayList<>();
         if (root == null) {
-            return res;
+            return lists;
         }
 
+        boolean level = true;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
@@ -51,7 +41,13 @@ public class Offer32Two {
             List<Integer> list = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode poll = queue.poll();
-                list.add(poll.val);
+
+                if (level) {
+                    list.add(poll.val);
+                } else {
+                    list.add(0, poll.val);
+                }
+
                 if (poll.left != null) {
                     queue.add(poll.left);
                 }
@@ -59,8 +55,9 @@ public class Offer32Two {
                     queue.add(poll.right);
                 }
             }
-            res.add(list);
+            level = !level;
+            lists.add(list);
         }
-        return res;
+        return lists;
     }
 }
