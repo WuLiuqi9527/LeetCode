@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 给定一个由正整数组成且不存在重复数字的数组，找出和为给定目标正整数的组合的个数。
- *
+ * <p>
  * 示例:
  * nums = [1, 2, 3]
  * target = 4
@@ -30,12 +30,14 @@ public class Demo377 {
          * if(){递归终止}
          *      ... // 递归处理
          */
-        if (target == 0){return 1;}
+        if (target == 0) {
+            return 1;
+        }
 
         int res = 0;
-        for (int num:nums){
-            if (target >= num){
-                res += combinationSum41(nums,target-num);
+        for (int num : nums) {
+            if (target >= num) {
+                res += combinationSum41(nums, target - num);
             }
         }
         return res;
@@ -46,23 +48,25 @@ public class Demo377 {
         /**
          * 记忆化搜索
          */
-        int[] memo = new int[target+1];
-        Arrays.fill(memo,-1);
+        int[] memo = new int[target + 1];
+        Arrays.fill(memo, -1);
         memo[0] = 1;
 
         return search(nums, target, memo);
     }
 
     private int search(int[] nums, int target, int[] memo) {
-        if (memo[target] != -1){return memo[target];}
+        if (memo[target] != -1) {
+            return memo[target];
+        }
 
         int res = 0;
-        for (int num:nums){
-            if (target >= num){
-                res += search(nums,target-num, memo);
+        for (int num : nums) {
+            if (target >= num) {
+                res += search(nums, target - num, memo);
             }
         }
-        memo[target]= res;
+        memo[target] = res;
         return res;
     }
 
@@ -71,19 +75,19 @@ public class Demo377 {
         /**
          * 动态规划
          */
-        if (nums.length == 0){return 0;}
-
-        int[] dp = new int[target+1];
+        int[] dp = new int[target + 1];
         // 推导递推公式 本身值为多少无意义
         dp[0] = 1;
 
         for (int i = 1; i <= target; i++) {
             for (int j = 0; j < nums.length; j++) {
-                if (i >= nums[j]){
-                    dp[i] += dp[i-nums[j]];
+                // i 为 target 的剩余值
+                if (i >= nums[j]) {
+                    dp[i] += dp[i - nums[j]];
                 }
             }
         }
+
         return dp[target];
     }
 }

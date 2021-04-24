@@ -26,33 +26,35 @@ import java.util.List;
  */
 public class Demo40 {
 
-    List<List<Integer>> res = new ArrayList<>();
-    List<Integer> path = new ArrayList<>();
+    List<List<Integer>> lists = new ArrayList<>();
+    List<Integer> list = new ArrayList<>();
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
 
         Arrays.sort(candidates);
         dfs(candidates, target, 0);
-        return res;
+        return lists;
     }
 
     private void dfs(int[] candidates, int target, int index) {
-
+        // 回溯算法 不可重复
         if (target == 0) {
-            res.add(new ArrayList<>(path));
+            lists.add(new ArrayList<>(list));
+            return;
+        }
+
+        if (index >= candidates.length || candidates[index] > target) {
             return;
         }
 
         for (int i = index; i < candidates.length; i++) {
-            if (candidates[i] <= target) {
-                // 去重
-                if (i > index && candidates[i] == candidates[i - 1]) {
-                    continue;
-                }
-                path.add(candidates[i]);
-                dfs(candidates, target - candidates[i], i + 1);
-                path.remove(path.size() - 1);
+            // 去重
+            if (i > index && candidates[i] == candidates[i - 1]) {
+                continue;
             }
+            list.add(candidates[i]);
+            dfs(candidates, target - candidates[i], i + 1);
+            list.remove(list.size() - 1);
         }
     }
 

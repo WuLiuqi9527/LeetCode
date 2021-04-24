@@ -1,7 +1,6 @@
 package p201_250;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -21,30 +20,35 @@ import java.util.List;
  */
 public class Demo216 {
 
-    List<List<Integer>> res = new ArrayList<>();
-    List<Integer> path = new ArrayList<>();
+    List<List<Integer>> lists;
+    List<Integer> list;
 
     public List<List<Integer>> combinationSum3(int k, int n) {
 
+        lists = new ArrayList<>();
+        list = new ArrayList<>();
         dfs(k, n, 1);
-        return res;
+        return lists;
     }
 
     private void dfs(int k, int n, int index) {
 
+        // 结束条件 k==0 && n==0
         if (k == 0 && n == 0) {
-            res.add(new ArrayList<>(path));
+            lists.add(new ArrayList<>(list));
             return;
         }
 
+        // 只允许 1-9
         if (k <= 0 || n <= 0) {
             return;
         }
 
         for (int i = index; i < 10; i++) {
-            path.add(i);
+            list.add(i);
+            // i+1 已经保证了不会重复 (1-9)
             dfs(k - 1, n - i, i + 1);
-            path.remove(path.size() - 1);
+            list.remove(list.size() - 1);
         }
     }
 

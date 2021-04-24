@@ -22,31 +22,44 @@ import java.util.*;
  */
 public class Demo39 {
 
-    List<List<Integer>> res = new ArrayList<>();
-    List<Integer> path = new ArrayList<>();
+    List<List<Integer>> lists;
+    List<Integer> list;
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-
+        lists = new ArrayList<>();
+        list = new ArrayList<>();
         Arrays.sort(candidates);
         dfs(candidates, target, 0);
-        return res;
+        return lists;
     }
 
+    /**
+     * 回溯算法模板
+     * backtrack() {
+     *      if 满足结束条件:
+     *          result.add(路径)
+     *      return
+     *      for 选择 in 选择列表:
+     *          做选择
+     *          backtrack(路径, 选择列表)
+     *          撤销选择
+     * }
+     */
     private void dfs(int[] candidates, int target, int index) {
-
+        // 回溯 可重复
         if (target == 0) {
-            res.add(new ArrayList<>(path));
+            lists.add(new ArrayList<>(list));
             return;
         }
 
-        if (candidates[index] > target) {
+        if (candidates[index] <= target) {
             return;
         }
 
         for (int i = index; i < candidates.length; i++) {
-            path.add(candidates[i]);
+            list.add(candidates[i]);
             dfs(candidates, target - candidates[i], i);
-            path.remove(path.size()-1);
+            list.remove(list.size() - 1);
         }
     }
 
