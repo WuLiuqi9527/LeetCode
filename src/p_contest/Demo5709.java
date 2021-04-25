@@ -1,4 +1,4 @@
-package p_others;
+package p_contest;
 
 /**
  * 给你一个正整数组成的数组 nums ，返回 nums 中一个 升序 子数组的最大可能元素和。

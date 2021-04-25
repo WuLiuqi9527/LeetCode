@@ -1,4 +1,4 @@
-package p_others;
+package p_contest;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package p_others;
+package p_contest;
 
 /**
  * 列表的 异或和（XOR sum）指对所有元素进行按位 XOR 运算的结果。

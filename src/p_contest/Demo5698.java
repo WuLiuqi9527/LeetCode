@@ -1,4 +1,4 @@
-package p_others;
+package p_contest;
 
 /**
  * 给你一个整数数组 nums ，和两个整数 limit 与 goal 。

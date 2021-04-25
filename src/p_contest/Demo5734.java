@@ -1,4 +1,4 @@
-package p_others;
+package p_contest;
 
 /**
  * 全字母句 指包含英语字母表中每个字母至少一次的句子。

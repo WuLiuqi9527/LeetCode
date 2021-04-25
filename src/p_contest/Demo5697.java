@@ -1,4 +1,4 @@
-package p_others;
+package p_contest;
 
 /**
  * 给你一个二进制字符串 s ，该字符串 不含前导零 。
