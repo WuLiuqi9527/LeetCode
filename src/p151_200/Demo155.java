@@ -30,7 +30,6 @@ public class Demo155 {
             stack.push(val);
             if (stackAss.isEmpty() || (!stackAss.isEmpty() && val <= stackAss.peek())) {
                 stackAss.push(val);
-
             }
         }
 

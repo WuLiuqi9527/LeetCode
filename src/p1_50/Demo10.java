@@ -50,18 +50,14 @@ public class Demo10 {
             }
         } else {
             // * 可以匹配 0个 or 多个 前一字符
-            // * 匹配0个 表示 0 个前一字符 所以减少两个位置
+            // * 匹配 0个 表示 0 个前一字符 所以减少两个位置
             if (recur(s, p, sIndex, pIndex - 2)) {
                 return true;
             }
-
             // * 匹配多个
             char cTemp = p[pIndex - 1];
             int sIndexMove = sIndex;
-
-            /**
-             * 用p的末尾去匹配s的末尾的1个,2个,3个,4个...直到 * 把 s[0] 都匹配掉
-             */
+            // 用 p 的末尾去匹配 s 的末尾的1个,2个,3个,4个...直到 * 把 s[0] 都匹配掉
             while (sIndexMove >= 0 && (cTemp == '.' || cTemp == s[sIndexMove])) {
                 // * 匹配 1个,2个,3个,4个...
                 if (recur(s, p, sIndexMove - 1, pIndex - 2)) {
