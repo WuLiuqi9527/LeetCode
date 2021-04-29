@@ -57,7 +57,55 @@ public class Offer46 {
         }
     }
 
+    /**
+     * 打印所有可能的翻译
+     */
+    List<String> res;
+    StringBuilder list;
+
+    public List<String> translateNum3(int num) {
+
+        res = new ArrayList<>();
+        list = new StringBuilder();
+
+        //  把 num 上各位变成数组 [1,2,2,5,8]
+        String n = String.valueOf(num);
+        int len = n.length();
+        int[] nums = new int[len];
+        for (int i = 0; i < len; i++) {
+            nums[i] = n.charAt(i) - '0';
+        }
+
+        dfs(nums, 0);
+
+        return res;
+    }
+
+    private void dfs(int[] nums, int index) {
+        if (index == nums.length) {
+            res.add(new String(list));
+            return;
+        }
+
+        // 翻译一位
+        list.append((char) (nums[index] + 'a'));
+        dfs(nums, index + 1);
+        list.setLength(list.length() - 1);
+
+        // 翻译两位 (是否满足条件 1-25) [第一位不能为 0]
+        if (index < nums.length - 1 && nums[index] != 0) {
+
+            int num = nums[index] * 10 + nums[index + 1];
+
+            if (num >= 1 && num <= 25) {
+                list.append((char) (num + 'a'));
+                dfs(nums, index + 2);
+                list.setLength(list.length() - 1);
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(new Offer46().translateNum2(12258));
+        System.out.println(new Offer46().translateNum3(12258));
     }
 }
