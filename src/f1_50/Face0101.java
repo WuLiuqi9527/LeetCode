@@ -16,7 +16,7 @@ import java.util.HashSet;
  *
  * @author hc
  */
-public class Face1 {
+public class Face0101 {
 
     public static boolean isUnique(String astr) {
         return astr.chars().distinct().count() == astr.length();

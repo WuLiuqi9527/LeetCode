@@ -16,10 +16,9 @@ import javax.print.DocFlavor;
 public class Demo7 {
 
     public int reverse(int x) {
-
         int res = 0;
         while (x != 0) {
-            // res 溢出
+            // res 溢出 判断多次
             if (res * 10 / 10 != res) {
                 return 0;
             }
@@ -27,8 +26,17 @@ public class Demo7 {
             res = res * 10 + x % 10;
             x /= 10;
         }
-
         return res;
+    }
+
+    public int reverse2(int x) {
+        long res = 0;
+        while (x != 0) {
+            res = res * 10 + x % 10;
+            x /= 10;
+        }
+        // 只进行判断一次
+        return (int) res == res ? (int) res : 0;
     }
 
     public static void main(String[] args) {
