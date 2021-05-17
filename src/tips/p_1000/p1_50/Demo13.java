@@ -36,8 +36,9 @@ public class Demo13 {
             return res;
         }
 
-        for (int i = 0; i < s.length(); i++) {
-            if (i + 1 < s.length()) {
+        int len = s.length();
+        for (int i = 0; i < len; i++) {
+            if (i + 1 < len) {
                 if (which(s.charAt(i)) < which(s.charAt(i + 1))) {
                     res -= which(s.charAt(i));
                 } else {
@@ -46,7 +47,7 @@ public class Demo13 {
             }
         }
 
-        return res + which(s.charAt(s.length() - 1));
+        return res + which(s.charAt(len - 1));
     }
 
     private int which(char c){

@@ -28,6 +28,18 @@ public class Demo9 {
         return x == reversed || x == reversed / 10;
     }
 
+    public boolean isPalindrome2(int x) {
+
+        char[] ch = String.valueOf(x).toCharArray();
+        int start = 0, end = ch.length - 1;
+        while (start < end) {
+            if (ch[start++] != ch[end--]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         System.out.println(new Demo9().isPalindrome(1221));
         System.out.println(new Demo9().isPalindrome(121));
