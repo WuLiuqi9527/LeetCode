@@ -34,12 +34,12 @@ public class Demo3 {
      */
     public int lengthOfLongestSubstring(String s) {
 
-        int res = 0;
+        int res = 0, len = s.length();
         int l = 0, r = -1;
         int[] freq = new int[256];
 
-        while (l < s.length()) {
-            if (r + 1 < s.length() && freq[s.charAt(r + 1)] == 0) {
+        while (l < len) {
+            if (r + 1 < len && freq[s.charAt(r + 1)] == 0) {
                 freq[s.charAt(++r)]++;
             } else {
                 freq[s.charAt(l++)]--;
@@ -70,7 +70,7 @@ public class Demo3 {
             // map[s.charAt(i): 当前字符的前一个字符下标
             pre = Math.max(pre, map[s.charAt(i)]);
 
-            // 更新 rea 维护 map
+            // 更新 res 维护 map
             res = Math.max(res, i - pre);
             map[s.charAt(i)] = i;
         }
