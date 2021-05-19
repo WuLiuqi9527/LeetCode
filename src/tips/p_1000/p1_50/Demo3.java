@@ -40,8 +40,10 @@ public class Demo3 {
 
         while (l < len) {
             if (r + 1 < len && freq[s.charAt(r + 1)] == 0) {
+                // 窗口内不重复 纳入窗口
                 freq[s.charAt(++r)]++;
             } else {
+                // 有重复元素进入窗口，移出左边元素,直到重复元素被移出窗口
                 freq[s.charAt(l++)]--;
             }
             res = Math.max(res, r - l + 1);
