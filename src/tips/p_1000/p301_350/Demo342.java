@@ -16,6 +16,17 @@ public class Demo342 {
         return Integer.toString(n, 4).matches("10*$");
     }
 
+    public boolean isPowerOfFour1(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        while (n % 4 == 0) {
+            n >>= 2;
+        }
+
+        return n == 1;
+    }
+
     public boolean isPowerOfFour2(int n) {
         // 0xaa = (1010 1010) 一个字节 int 四个字节 0xaaaaaaaa
         // (n & (n - 1)) == 0 是否是 2 的幂
@@ -24,7 +35,7 @@ public class Demo342 {
 
     public boolean isPowerOfFour3(int n) {
         // 4^k = (3+1)^k 泰勒展开
-        return n > 0 && (n & (n-1)) == 0 && n % 3 == 1;
+        return n > 0 && (n & (n - 1)) == 0 && n % 3 == 1;
     }
 
     public static void main(String[] args) {
