@@ -12,7 +12,7 @@ import java.util.LinkedList;
  *
  * @author hc
  */
-public class Demo0304 {
+public class Face0304 {
 
     class MyQueue {
 
