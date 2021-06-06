@@ -1,7 +1,8 @@
 package tips.p_1000.p301_350;
 
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.PriorityQueue;
-import java.util.TreeMap;
 
 /**
  * 给定一个非空的整数数组，返回其中出现频率前 k 高的元素。
@@ -23,21 +24,17 @@ public class Demo347 {
 
     public int[] topKFrequent(int[] nums, int k) {
         /* 记录单词的频率 */
-        TreeMap<Integer, Integer> treeMap = new TreeMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
-            if (treeMap.containsKey(num)) {
-                treeMap.put(num, treeMap.get(num) + 1);
-            } else {
-                treeMap.put(num, 1);
-            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
         /* 优先队列 取前k个频率 */
-        PriorityQueue<Integer> pq = new PriorityQueue<>((o1, o2) -> treeMap.get(o1) - treeMap.get(o2));
-        for (int key:treeMap.keySet()){
-            if (pq.size() < k){
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.comparingInt(map::get));
+        for (int key : map.keySet()) {
+            if (pq.size() < k) {
                 pq.add(key);
-            }else if (treeMap.get(key) > treeMap.get(pq.peek())){
+            } else if (map.get(key) > map.get(pq.peek())) {
                 pq.remove();
                 pq.add(key);
             }
@@ -48,5 +45,9 @@ public class Demo347 {
             list[i] = pq.remove();
         }
         return list;
+    }
+
+    public static void main(String[] args) {
+        new Demo347().topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2);
     }
 }
