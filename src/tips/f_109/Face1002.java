@@ -1,26 +1,28 @@
-package tips.p_1000.p1_50;
+package tips.f_109;
+
+import tips.p_1000.p1_50.Demo49;
 
 import java.util.*;
 
 /**
- * 给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串。
- * <p>
- * 示例:
- * 输入: ["eat", "tea", "tan", "ate", "nat", "bat"]
+ * 编写一种方法，对字符串数组进行排序，将所有变位词组合在一起。
+ * 变位词是指字母相同，但排列不同的字符串。
+ * 注意：本题相对原题稍作修改
+ * <p>示例:
+ * 输入: ["eat", "tea", "tan", "ate", "nat", "bat"],
  * 输出:
  * [
  * ["ate","eat","tea"],
  * ["nat","tan"],
  * ["bat"]
  * ]
- * <p>
- * 说明：
+ * <p>说明：
  * 所有输入均为小写字母。
  * 不考虑答案输出的顺序。
  *
  * @author hc
  */
-public class Demo49 {
+public class Face1002 {
 
     public List<List<String>> groupAnagrams(String[] strs) {
 
@@ -81,6 +83,6 @@ public class Demo49 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Demo49().groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
+        System.out.println(new Face1002().groupAnagrams2(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
     }
 }
