@@ -1,6 +1,8 @@
 package tips.o_68.o1_50;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -16,18 +18,21 @@ import java.util.Set;
  */
 public class Offer38 {
 
+    /** 使用 set 应对重复字符 如 bba 可能出现重复 */
     Set<String> list;
-    StringBuilder sb;
 
     public String[] permutation(String s) {
+        // 回溯
         list = new HashSet<>();
-        sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         boolean[] used = new boolean[s.length()];
-        dfs(s, used);
+
+        dfs(s, used, sb);
+
         return list.toArray(new String[0]);
     }
 
-    private void dfs(String s, boolean[] used) {
+    private void dfs(String s, boolean[] used, StringBuilder sb) {
         if (s.length() == sb.length()) {
             list.add(sb.toString());
             return;
@@ -42,7 +47,7 @@ public class Offer38 {
 
             used[i] = true;
             sb.append(s.charAt(i));
-            dfs(s, used);
+            dfs(s, used, sb);
             sb.setLength(sb.length() - 1);
             used[i] = false;
         }
