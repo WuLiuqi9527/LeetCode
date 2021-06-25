@@ -1,28 +1,27 @@
-package tips.p_1000.p201_250;
+package tips.f_109.f_17;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Stack;
 
 /**
- * 给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。
- * 整数除法仅保留整数部分。
- * <p>
- * 示例 1：
- * 输入：s = "3+2*2"
- * 输出：7
- * <p>
- * 示例 2：
- * 输入：s = " 3/2 "
- * 输出：1
- * <p>
- * 示例 3：
- * 输入：s = " 3+5 / 2 "
- * 输出：5
+ * 给定一个包含正整数、加(+)、减(-)、乘(*)、除(/)的算数表达式(括号除外)，计算其结果。
+ * 表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格 。 整数除法仅保留整数部分。
+ * <p>示例 1:
+ * 输入: "3+2*2"
+ * 输出: 7
+ * <p>示例 2:
+ * 输入: " 3/2 "
+ * 输出: 1
+ * <p>示例 3:
+ * 输入: " 3+5 / 2 "
+ * 输出: 5
+ * <p>说明：
+ * 你可以假设所给定的表达式都是有效的。
+ * 请不要使用内置的库函数 eval。
  *
  * @author hc
  */
-public class Demo227 {
+public class Face1626 {
 
     public int calculate(String s) {
         int num = 0, res = 0;
@@ -68,9 +67,5 @@ public class Demo227 {
             res += numStack.pop();
         }
         return res;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Demo227().calculate(" 3+5 / 2 "));
     }
 }
