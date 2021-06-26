@@ -54,7 +54,7 @@ public class Demo525 {
             }
         }
 
-        // Map<num[i], 第一次出现num[i]下标> -> map<0, i> map<-1, j>
+        // Map<num[i], 第一次出现 num[i]下标> -> map<0, i> map<-1, j>
         Map<Integer, Integer> map = new HashMap<>();
         map.put(0, -1);
         for (int i = 0; i < len; i++) {
