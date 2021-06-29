@@ -25,6 +25,7 @@ public class Demo168 {
 
     /**
      * A -> AB -> BA -> AAB 26进制 减 1 -> 0 ~ 25
+     * 相当于一个从 1 开始的 26 进制的数的转换，取余运算是用于转换从0开始的进制数 所以计算时要进行-1操作
      */
     public String convertToTitle(int columnNumber) {
 

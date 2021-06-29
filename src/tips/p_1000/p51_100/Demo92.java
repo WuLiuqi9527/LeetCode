@@ -71,11 +71,11 @@ public class Demo92 {
             pre = pre.next;
         }
 
-        head = pre.next;
+        ListNode cur = pre.next;
         for (int i = left; i < right; i++) {
-            ListNode next = head.next;
+            ListNode next = cur.next;
 
-            head.next = next.next;
+            cur.next = next.next;
             next.next = pre.next;
             pre.next = next;
         }

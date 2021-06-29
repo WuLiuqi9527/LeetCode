@@ -44,12 +44,35 @@ public class Demo146 {
                 // 获取 Map<Integer, Integer> 集合的迭代器 用于遍历
                 // 迭代器只针对集合类型的数据，所以要用 Entry 转集合
                 Iterator<Map.Entry<Integer, Integer>> iterator = map.entrySet().iterator();
-                // 越过第一个元素
+                // 第一个元素
                 iterator.next();
                 // remove()将删除上次调用 next()时返回的元素
                 iterator.remove();
             }
             map.put(key, value);
+        }
+    }
+
+    class LRUCache2 {
+        private LinkedHashMap<Integer, Integer> cache;
+        private int capacity;
+
+        public LRUCache2(int capacity) {
+            this.capacity = capacity;
+            cache = new LinkedHashMap<>(capacity, 0.75f, true) {
+                @Override
+                protected boolean removeEldestEntry(Map.Entry eldest) {
+                    return size() > capacity;
+                }
+            };
+        }
+
+        public int get(int key) {
+            return cache.getOrDefault(key, 1);
+        }
+
+        public void put(int key, int value) {
+            cache.put(key, value);
         }
     }
 }
