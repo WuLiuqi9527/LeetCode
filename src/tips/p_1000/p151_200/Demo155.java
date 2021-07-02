@@ -1,5 +1,7 @@
 package tips.p_1000.p151_200;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
@@ -19,11 +21,11 @@ public class Demo155 {
      */
     class MinStack {
 
-        Stack<Integer> stack, stackAss;
+        Deque<Integer> stack, stackAss;
 
         public MinStack() {
-            stack = new Stack<>();
-            stackAss = new Stack<>();
+            stack = new ArrayDeque<>();
+            stackAss = new ArrayDeque<>();
         }
 
         public void push(int val) {
