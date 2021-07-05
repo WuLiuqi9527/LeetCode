@@ -60,6 +60,24 @@ public class Demo5 {
         return ans;
     }
 
+    public String longestPalindrome3(String s) {
+        int len = s.length();
+        String result = "";
+
+        for (int i = 0; i < len * 2 - 1; i++) {
+            int left = i / 2;
+            int right = left + i % 2;
+            while (left >= 0 && right < len && s.charAt(left) == s.charAt(right)) {
+                String tmp = s.substring(left, right + 1);
+                if (tmp.length() > result.length()) {
+                    result = tmp;
+                }
+                left--;
+                right++;
+            }
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         System.out.println(new Demo5().longestPalindrome("babad"));
