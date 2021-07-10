@@ -14,6 +14,79 @@ import java.util.*;
 public class Demo146 {
 
     class LRUCache {
+        // 定义双向链表 尾部 tail 保持最不常用 移除
+        class DListNode {
+            int key;
+            int value;
+            DListNode pre;
+            DListNode next;
+
+            public DListNode() {
+            }
+
+            public DListNode(int key, int value) {
+                this.key = key;
+                this.value = value;
+            }
+        }
+
+        // hashmap 实现查询 O(1)
+        Map<Integer, DListNode> map;
+        DListNode head, tail;
+        int capacity;
+
+        public LRUCache(int capacity) {
+            this.capacity = capacity;
+            map = new HashMap<>();
+            head = new DListNode(-1, -1);
+            tail = new DListNode(-1, -1);
+            head.next = tail;
+            tail.pre = head;
+        }
+
+        public int get(int key) {
+            DListNode node = map.get(key);
+            if (node == null) {
+                return -1;
+            }
+            refresh(node);
+            return node.value;
+        }
+
+        public void put(int key, int value) {
+            DListNode node = map.get(key);
+            if (node == null) {
+                if (map.size() == capacity) {
+                    DListNode del = tail.pre;
+                    map.remove(del.key);
+                    delete(del);
+                }
+                node = new DListNode(key, value);
+                map.put(key, node);
+            } else {
+                node.value = value;
+            }
+            refresh(node);
+        }
+
+        private void refresh(DListNode node) {
+            delete(node);
+            node.next = head.next;
+            node.pre = head;
+            head.next.pre = node;
+            head.next = node;
+        }
+
+        private void delete(DListNode node) {
+            if (node.pre != null) {
+                DListNode preNode = node.pre;
+                preNode.next = node.next;
+                node.next.pre = preNode;
+            }
+        }
+    }
+
+    class LRUCache2 {
 
         // HashMap + 双向链表 = 保持插入顺序的 Map
         // 维护一个双向链表来保证迭代顺序
@@ -22,7 +95,7 @@ public class Demo146 {
         int capacity;
         Map<Integer, Integer> map = new LinkedHashMap<>();
 
-        public LRUCache(int capacity) {
+        public LRUCache2(int capacity) {
             this.capacity = capacity;
         }
 
@@ -53,11 +126,11 @@ public class Demo146 {
         }
     }
 
-    class LRUCache2 {
+    class LRUCache3 {
         private LinkedHashMap<Integer, Integer> cache;
         private int capacity;
 
-        public LRUCache2(int capacity) {
+        public LRUCache3(int capacity) {
             this.capacity = capacity;
             cache = new LinkedHashMap<>(capacity, 0.75f, true) {
                 @Override
