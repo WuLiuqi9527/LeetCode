@@ -10,7 +10,6 @@ package tips.p_1000.p51_100;
 public class Demo63 {
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-
         // dp 对内存消耗进行优化
         int row = obstacleGrid.length;
         int col = obstacleGrid[0].length;
@@ -33,7 +32,6 @@ public class Demo63 {
     }
 
     public int uniquePathsWithObstacles2(int[][] obstacleGrid) {
-
         // 常规 dp
         if (obstacleGrid == null || obstacleGrid.length == 0) {
             return 0;
@@ -62,7 +60,6 @@ public class Demo63 {
     }
 
     public int uniquePathsWithObstacles3(int[][] obstacleGrid) {
-
         if (obstacleGrid == null || obstacleGrid.length == 0) {
             return 0;
         }
@@ -70,24 +67,65 @@ public class Demo63 {
         int row = obstacleGrid.length;
         int col = obstacleGrid[0].length;
         int[][] dp = new int[row][col];
+        dp[0][0] = 1;
 
-        for (int i = 1; i < row; i++) {
-            for (int j = 1; j < col; j++) {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
                 if (obstacleGrid[i][j] == 1) {
                     dp[i][j] = 0;
                 } else {
-                    if (i == 0 && j == 0) {
-                        dp[i][j] = 1;
-                    } else if (i == 0) {
-                        dp[i][j] = dp[i][j - 1];
-                    } else if (j == 0) {
-                        dp[i][j] = dp[i - 1][j];
-                    } else {
+                    if (i > 0 && j > 0) {
                         dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+                    } else if (i > 0) {
+                        dp[i][j] = dp[i - 1][j];
+                    } else if (j > 0) {
+                        dp[i][j] = dp[i][j - 1];
                     }
                 }
             }
         }
         return dp[row - 1][col - 1];
+    }
+
+    public int uniquePathsWithObstacles4(int[][] obstacleGrid) {
+        if (obstacleGrid == null || obstacleGrid.length == 0) {
+            return 0;
+        }
+
+        int row = obstacleGrid.length;
+        int col = obstacleGrid[0].length;
+        int[][] dp = new int[row + 1][col + 1];
+        dp[0][1] = 1;
+
+        for (int i = 1; i <= row; i++) {
+            for (int j = 1; j <= col; j++) {
+                if (obstacleGrid[i - 1][j - 1] == 1) {
+                    dp[i][j] = 0;
+                } else {
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+                }
+            }
+        }
+        return dp[row][col];
+    }
+
+    public int uniquePathsWithObstacles5(int[][] obstacleGrid) {
+        if (obstacleGrid == null || obstacleGrid.length == 0) {
+            return 0;
+        }
+
+        int row = obstacleGrid.length;
+        int col = obstacleGrid[0].length;
+        int[][] dp = new int[row + 1][col + 1];
+        dp[0][1] = obstacleGrid[0][0] == 1 ? 0 : 1;
+
+        for (int i = 1; i <= row; i++) {
+            for (int j = 1; j <= col; j++) {
+                if (obstacleGrid[i - 1][j - 1] != 1) {
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+                }
+            }
+        }
+        return dp[row][col];
     }
 }

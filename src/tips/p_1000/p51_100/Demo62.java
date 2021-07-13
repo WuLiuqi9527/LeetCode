@@ -12,7 +12,6 @@ package tips.p_1000.p51_100;
 public class Demo62 {
 
     public int uniquePaths(int m, int n) {
-
         /**
          * 动态规划
          */
@@ -31,7 +30,35 @@ public class Demo62 {
     }
 
     public int uniquePaths2(int m, int n) {
+        int[][] dp = new int[m][n];
+        dp[0][0] = 1;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i > 0 && j > 0) {
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+                } else if (i > 0) {
+                    dp[i][j] = dp[i - 1][j];
+                } else if (j > 0) {
+                    dp[i][j] = dp[i][j - 1];
+                }
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
 
+    public int uniquePaths3(int m, int n) {
+        // 加一行一列, 减少边界条件
+        int[][] dp = new int[m + 1][n + 1];
+        dp[0][1] = 1;
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+        return dp[m][n];
+    }
+
+    public int uniquePaths4(int m, int n) {
         long res = 1;
         for (int x = n, y = 1; y < m; x++, y++) {
             res = res * x / y;
@@ -40,6 +67,6 @@ public class Demo62 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Demo62().uniquePaths2(3, 7));
+        System.out.println(new Demo62().uniquePaths3(3, 7));
     }
 }
