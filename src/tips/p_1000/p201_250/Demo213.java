@@ -17,7 +17,7 @@ public class Demo213 {
 
     public int rob(int[] nums) {
 
-        if (nums.length == 0) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
         if (nums.length == 1) {
@@ -44,7 +44,7 @@ public class Demo213 {
 
     public int rob2(int[] nums) {
 
-        if (nums.length == 0) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
         if (nums.length == 1) {
