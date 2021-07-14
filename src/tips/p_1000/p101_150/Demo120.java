@@ -12,13 +12,36 @@ import java.util.List;
  */
 public class Demo120 {
 
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int n = triangle.size();
+        int ans = Integer.MAX_VALUE;
+        int[][] f = new int[n][n];
+        f[0][0] = triangle.get(0).get(0);
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                int val = triangle.get(i).get(j);
+                f[i][j] = Integer.MAX_VALUE;
+                if (j != 0) {
+                    f[i][j] = Math.min(f[i][j], f[i - 1][j - 1] + val);
+                }
+                if (j != i) {
+                    f[i][j] = Math.min(f[i][j], f[i - 1][j] + val);
+                }
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            ans = Math.min(ans, f[n - 1][i]);
+        }
+        return ans;
+    }
+
     /**
      * dp[0]=11
      * dp[0]=9  dp[1]=10
      * dp[0]=7  dp[1]=6  dp[2]=10
      * dp[0]=4  dp[1]=1  dp[2]=8  dp[3]=3  dp[4]=0
      */
-    public int minimumTotal(List<List<Integer>> triangle) {
+    public int minimumTotal2(List<List<Integer>> triangle) {
         int n = triangle.size();
 
         // 为了计算方便 j+1

@@ -37,7 +37,30 @@ public class Demo64 {
         return grid[row - 1][col - 1];
     }
 
+    public int minPathSum2(int[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+
+        int row = grid.length, col = grid[0].length;
+        int[][] dp = new int[row][col];
+        dp[0][0] = grid[0][0];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (i > 0 && j > 0) {
+                    grid[i][j] = Math.min(grid[i - 1][j], grid[i][j - 1]) + grid[i][j];
+                } else if (i > 0) {
+                    grid[i][j] = grid[i - 1][j] + grid[i][j];
+                } else if (j > 0) {
+                    grid[i][j] = grid[i][j - 1] + grid[i][j];
+                }
+            }
+        }
+        return grid[row - 1][col - 1];
+    }
+
     public static void main(String[] args) {
         System.out.println(new Demo64().minPathSum(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
+        System.out.println(new Demo64().minPathSum2(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
     }
 }
