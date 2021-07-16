@@ -16,34 +16,21 @@ package tips.o_68.o51_68;
 public class Offer53One {
 
     public int search(int[] nums, int target) {
-        if (nums.length == 0 || nums[0] > target || nums[nums.length - 1] < target) {
-            return 0;
-        }
-
-        int res = 0;
-        int left = 0, right = nums.length - 1;
-        while (left <= right) {
-            int mid = left + ((right - left) >> 1);
-            if (nums[mid] == target) {
-                ++res;
-                int front = mid - 1, last = mid + 1;
-                while (front >= left && nums[front] == target) {
-                    ++res;
-                    --front;
-                }
-                while (last <= right && nums[last] == target) {
-                    ++res;
-                    ++last;
-                }
-                return res;
-            } else if (nums[mid] < target) {
-                left = mid + 1;
+        int l = 0, r = nums.length - 1;
+        int count = 0;
+        while (l < r) {
+            int mid = l + (r - l) / 2;
+            if (nums[mid] >= target) {
+                r = mid;
             } else {
-                right = mid - 1;
+                l = mid + 1;
             }
         }
 
-        return res;
+        while (l < nums.length && nums[l++] == target) {
+            ++count;
+        }
+        return count;
     }
 
     public static void main(String[] args) {
