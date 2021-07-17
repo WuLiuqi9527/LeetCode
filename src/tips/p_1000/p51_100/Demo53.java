@@ -15,8 +15,8 @@ public class Demo53 {
 
     public int maxSubArray(int[] nums) {
 
-        int res = nums[0];
         int sumCur = 0;
+        int res = nums[0];
         for (int num : nums) {
             // sumCur如果小于 0, 则对于当前 num 起副作用, 重新从 num 处开始计算连续和
             // res 记录曾出现的计和的最大值
