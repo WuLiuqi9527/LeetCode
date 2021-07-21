@@ -21,8 +21,8 @@ public class Demo121 {
         int min = prices[0];
         int len = prices.length;
         for (int i = 1; i < len; i++) {
-            res = prices[i] - min > res ? prices[i] - min : res;
-            min = prices[i] < min ? prices[i] : min;
+            res = Math.max(prices[i] - min, res);
+            min = Math.min(min, prices[i]);
         }
 
         return res;
@@ -30,7 +30,7 @@ public class Demo121 {
 
     public static void main(String[] args) {
         System.out.println(new Demo121().maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
-        System.out.println(new Demo121().maxProfit(new int[]{7,6,4,3,1}));
+        System.out.println(new Demo121().maxProfit(new int[]{7, 6, 4, 3, 1}));
         System.out.println(new Demo121().maxProfit(new int[]{1, 2}));
     }
 }
