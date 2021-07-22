@@ -19,11 +19,11 @@ package tips.p_1000.p1_50;
 public class Demo42 {
 
     public int trap(int[] height) {
-        int n = height.length;
-        if (n == 0) {
+        if (height == null || height.length == 0) {
             return 0;
         }
 
+        int n = height.length;
         int[] leftMax = new int[n];
         leftMax[0] = height[0];
         for (int i = 1; i < n; ++i) {
