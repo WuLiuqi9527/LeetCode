@@ -16,27 +16,27 @@ import java.util.List;
 public class Demo118 {
 
     public List<List<Integer>> generate(int numRows) {
-
         List<List<Integer>> res = new LinkedList<>();
-
         for (int i = 0; i < numRows; i++) {
             List<Integer> list = new LinkedList<>();
             if (i == 0) {
                 list.add(1);
             } else {
-                List<Integer> tem = res.get(i - 1);
-                int len = tem.size() + 1;
-
-                for (int j = 0; j < len; j++) {
-                    if (j == 0 || j == len - 1) {
-                        list.add(1);
-                    } else {
-                        list.add(tem.get(j - 1) + tem.get(j));
-                    }
-                }
+                addList(res, list, i);
             }
             res.add(list);
         }
         return res;
+    }
+
+    private void addList(List<List<Integer>> res, List<Integer> list, int i) {
+        List<Integer> tem = res.get(i - 1);
+        for (int j = 0; j <= tem.size(); j++) {
+            if (j == 0 || j == tem.size()) {
+                list.add(1);
+            } else {
+                list.add(tem.get(j - 1) + tem.get(j));
+            }
+        }
     }
 }

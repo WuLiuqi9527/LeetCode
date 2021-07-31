@@ -17,6 +17,10 @@ public class Demo221 {
 
     public int maximalSquare(char[][] matrix) {
 
+        /**
+         * dp[i][j]表示以第 i 行第 j 列为 右下角 所能构成的最大正方形边长, 则递推式为:
+         *   dp[i][j] = 1 + min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1]);
+         **/
         int max = 0;
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return max;

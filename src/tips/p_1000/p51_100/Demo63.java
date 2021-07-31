@@ -41,9 +41,11 @@ public class Demo63 {
         int col = obstacleGrid[0].length;
         int[][] dp = new int[row][col];
 
+        // 第 1 行的格子只有从其左边格子走过去这一种走法，因此初始化 dp[0][j] 值为 1，存在障碍物时为 0。
         for (int i = 0; i < row && obstacleGrid[i][0] == 0; i++) {
             dp[i][0] = 1;
         }
+        // 第 1 列的格子只有从其上边格子走过去这一种走法，因此初始化 dp[i][0] 值为 1，存在障碍物时为 0；
         for (int j = 0; j < col && obstacleGrid[0][j] == 0; j++) {
             dp[0][j] = 1;
         }

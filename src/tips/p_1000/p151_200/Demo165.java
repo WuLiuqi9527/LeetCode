@@ -78,7 +78,7 @@ public class Demo165 {
 
             if (sum1 != sum2) {
                 return sum1 > sum2 ? 1 : -1;
-            }else {
+            } else {
                 ++v1;
                 ++v2;
             }
@@ -86,8 +86,43 @@ public class Demo165 {
         return 0;
     }
 
+    public int compareVersion3(String version1, String version2) {
+        if (version1.equals(version2)) {
+            return 0;
+        }
+        String[] version1Array = version1.split("[._]");
+        String[] version2Array = version2.split("[._]");
+        int index = 0;
+        int minLen = Math.min(version1Array.length, version2Array.length);
+        long diff = 0;
+
+        while (index < minLen
+                && (diff = Long.parseLong(version1Array[index])
+                - Long.parseLong(version2Array[index])) == 0) {
+            index++;
+        }
+        if (diff == 0) {
+            for (int i = index; i < version1Array.length; i++) {
+                if (Long.parseLong(version1Array[i]) > 0) {
+                    return 1;
+                }
+            }
+
+            for (int i = index; i < version2Array.length; i++) {
+                if (Long.parseLong(version2Array[i]) > 0) {
+                    return -1;
+                }
+            }
+            return 0;
+        } else {
+            return diff > 0 ? 1 : -1;
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(new Demo165().compareVersion2("1.1", "1.1.1"));
+        System.out.println(new Demo165().compareVersion3("0.1.0", "1.0"));
+        System.out.println(new Demo165().compareVersion3("2.1.13", "1.20.0"));
+        System.out.println(new Demo165().compareVersion3("2.1.0", "2.1.0"));
 //        System.out.println(new Demo165().compareVersion2("7.5.2.4", "7.5.3"));
 //        System.out.println(new Demo165().compareVersion2("1.01", "1.001"));
 //        System.out.println(new Demo165().compareVersion2("1.0", "1.0.0"));

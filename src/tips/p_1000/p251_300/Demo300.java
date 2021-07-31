@@ -1,5 +1,7 @@
 package tips.p_1000.p251_300;
 
+import java.util.Arrays;
+
 /**
  * 给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
  * 子序列是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。
@@ -21,9 +23,7 @@ public class Demo300 {
         }
 
         int[] memo = new int[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            memo[i] = 1;
-        }
+        Arrays.fill(memo, 1);
 
         for (int i = 1; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
@@ -35,7 +35,7 @@ public class Demo300 {
 
         int res = 1;
         for (int i = 0; i < nums.length; i++) {
-            res = Math.max(res,memo[i]);
+            res = Math.max(res, memo[i]);
         }
         return res;
     }
