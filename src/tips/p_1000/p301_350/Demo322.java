@@ -30,7 +30,6 @@ public class Demo322 {
 
         int count = 0;
         for (int i = coins.length - 1; i >= 0; i--) {
-
             count += Math.floor(amount / coins[i]);
             if (amount / coins[i] >= 1) {
                 amount = amount % coins[i];
@@ -52,7 +51,7 @@ public class Demo322 {
         memo[0] = 0;
         for (int i = 1; i <= amount; i++) {
             for (int j = 0; j < coins.length; j++) {
-                if (i - coins[j] >= 0){
+                if (i - coins[j] >= 0) {
                     memo[i] = Math.min(memo[i], memo[i - coins[j]] + 1);
                 }
             }

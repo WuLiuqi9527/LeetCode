@@ -10,12 +10,23 @@ package tips.p_1000.p351_400;
 public class Demo392 {
 
     public boolean isSubsequence(String s, String t) {
+        int si = 0, ti = 0;
+        while (si < s.length() && ti < t.length()) {
+            if (s.charAt(si) == t.charAt(ti)) {
+                ++si;
+            }
+            ++ti;
+        }
+        return si == s.length();
+    }
+
+    public boolean isSubsequence2(String s, String t) {
         int index = -1;
-        for (char c:s.toCharArray()){
-            if (t.indexOf(c,index + 1) == -1) {
+        for (char c : s.toCharArray()) {
+            if (t.indexOf(c, index + 1) == -1) {
                 return false;
             }
-            index = t.indexOf(c,index+1);
+            index = t.indexOf(c, index + 1);
         }
         return true;
     }
