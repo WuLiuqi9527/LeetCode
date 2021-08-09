@@ -32,21 +32,18 @@ public class Demo209 {
         int res = nums.length + 1;
 
         while (l < nums.length) {
-            if (sum < target && r+1 < nums.length) {
+            if (sum < target && r + 1 < nums.length) {
                 sum += nums[++r];
             } else {
                 sum -= nums[l++];
             }
-            if (sum >= target){
-                res = Math.min(res, r-l+1);
+
+            if (sum >= target) {
+                res = Math.min(res, r - l + 1);
             }
         }
 
-        if (res == nums.length+1){
-            return 0;
-        }
-
-        return res;
+        return res == nums.length + 1 ? 0 : res;
     }
 
     public static void main(String[] args) {
