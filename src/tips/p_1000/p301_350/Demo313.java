@@ -23,22 +23,25 @@ public class Demo313 {
         int[] res = new int[n];
         res[0] = 1;
 
-        // primes 指针
+        // lc264 3指针 -> primes k指针
         int[] index = new int[len];
         for (int i = 1; i < n; i++) {
             int next = Integer.MAX_VALUE;
             for (int j = 0; j < len; j++) {
                 next = Math.min(next, res[index[j]] * primes[j]);
             }
-
-            // 将所有可以得到这个值的指针右移一位，用来防止相同数字的产生
-            for (int j = 0; j < len; j++) {
-                if (next == res[index[j]] * primes[j]) {
-                    ++index[j];
-                }
-            }
+            updateIndex(next, res, index, primes);
             res[i] = next;
         }
         return res[n - 1];
+    }
+
+    private void updateIndex(int next, int[] res, int[] index, int[] primes) {
+        int len = primes.length;
+        for (int j = 0; j < len; j++) {
+            if (next == res[index[j]] * primes[j]) {
+                ++index[j];
+            }
+        }
     }
 }
