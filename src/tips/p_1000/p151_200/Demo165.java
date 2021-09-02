@@ -41,19 +41,21 @@ package tips.p_1000.p151_200;
 public class Demo165 {
 
     public int compareVersion(String version1, String version2) {
-
         // ".$|()[{^?*+\\" 特殊字符前需要加转义字符
         String[] v1 = version1.split("\\.");
         String[] v2 = version2.split("\\.");
-        int lenV1 = v1.length, lenV2 = v2.length, maxLen = Math.max(lenV1, lenV2);
-        for (int i = 0; i < maxLen; i++) {
-            int v1Num = i < lenV1 ? Integer.valueOf(v1[i]) : 0;
-            int v2Num = i < lenV2 ? Integer.valueOf(v2[i]) : 0;
-            if (v1Num > v2Num) {
-                return 1;
+        int len1 = v1.length, len2 = v2.length;
+        int i = 0, j = 0;
+        while (i < len1 || j < len2) {
+            int a = 0, b = 0;
+            if (i < len1) {
+                a = Integer.parseInt(v1[i++]);
             }
-            if (v1Num < v2Num) {
-                return -1;
+            if (j < len2) {
+                b = Integer.parseInt(v2[j++]);
+            }
+            if (a != b) {
+                return a > b ? 1 : -1;
             }
         }
         return 0;
