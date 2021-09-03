@@ -31,7 +31,7 @@ public class Demo215 {
         for (int num : nums) {
             if (queue.size() < k) {
                 queue.add(num);
-            }else if (queue.peek() < num){
+            } else if (queue.peek() < num) {
                 queue.remove();
                 queue.add(num);
             }
@@ -39,7 +39,7 @@ public class Demo215 {
         return queue.peek();
     }
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println(new Demo215().findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
         System.out.println(new Demo215().findKthLargest2(new int[]{3, 2, 1, 5, 6, 4}, 2));
     }
