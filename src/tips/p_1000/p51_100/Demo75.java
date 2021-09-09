@@ -17,15 +17,9 @@ import java.util.Arrays;
 public class Demo75 {
 
     public void sortColors(int[] nums) {
-        /**
-         * 1、直接调用系统排序
-         */
+        // 1、直接调用系统排序
         Arrays.sort(nums);
-
-        /**
-         * 2、计算出现次数，重组：计数排序思想
-         * 时间复杂度 O(n)   空间复杂度 O(k) k为数组的类别数
-         */
+        // 2、计算出现次数，重组：计数排序思想 时间复杂度 O(n) 空间复杂度 O(k) k为数组的类别数
         int[] count = new int[3];
         for (int num : nums) {
             count[num]++;
@@ -67,7 +61,28 @@ public class Demo75 {
         arr[j] = tem;
     }
 
+    public void sortColors2(int[] nums) {
+        int zero = 0, one = 0;
+        for(int num : nums) {
+            if(num == 0) {
+                ++zero;
+            }else if(num == 1) {
+                ++one;
+            }
+        }
+        int index = 0, len = nums.length;
+        while(index < len) {
+            if(zero-- > 0) {
+                nums[index++] = 0;
+            }else if(one-- > 0) {
+                nums[index++] = 1;
+            }else{
+                nums[index++] = 2;
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        new Demo75().sortColors(new int[]{2, 0, 2, 1, 1, 0});
+        new Demo75().sortColors2(new int[]{2, 0, 2, 1, 1, 0});
     }
 }
