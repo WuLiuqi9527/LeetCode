@@ -1,4 +1,4 @@
-package tips.p_1000.p601_650;
+package tips.p_1000.p651_700;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,8 +51,8 @@ public class Demo652 {
     List<TreeNode> ans;
 
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-        count = new HashMap();
-        ans = new ArrayList();
+        count = new HashMap<>();
+        ans = new ArrayList<>();
         collect(root);
         return ans;
     }
