@@ -51,7 +51,6 @@ public class Demo437 {
 
         res += findPath(node.left, num - node.val);
         res += findPath(node.right, num - node.val);
-
         return res;
     }
 }
