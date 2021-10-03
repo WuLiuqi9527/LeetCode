@@ -22,12 +22,13 @@ package tips.p_1000.p401_450;
  * @author hc
  */
 public class Demo405 {
+    static char[] chars = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            'a', 'b', 'c', 'd', 'e', 'f'};
 
     public String toHex(int num) {
         if (num == 0) {
             return "0";
         }
-        char[] chars = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
         StringBuilder sb = new StringBuilder();
 
         // 整型一共32位二进制，每4个二进制位是一位8进制，一共可以转为8位8进制，有符号右移通过sb.length() < 8判断有没有全部转化完；
@@ -37,5 +38,13 @@ public class Demo405 {
             num >>= 4;
         }
         return sb.reverse().toString();
+    }
+
+    public static String toHex2(int num) {
+        return Integer.toHexString(num);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(toHex2(-1));
     }
 }

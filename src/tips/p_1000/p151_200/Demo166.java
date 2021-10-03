@@ -50,7 +50,7 @@ public class Demo166 {
         if (a == 0) {
             return res.toString();
         }
-        return res.insert(map.get(a).intValue(), "(").append(")").toString();
+        return res.insert(map.get(a), "(").append(")").toString();
     }
 
     public static void main(String[] args) {
