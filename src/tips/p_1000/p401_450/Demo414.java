@@ -50,4 +50,21 @@ public class Demo414 {
             return set.pollFirst();
         }
     }
+
+    public int thirdMax2(int[] nums) {
+        long first = Long.MIN_VALUE, second = Long.MIN_VALUE, third = Long.MIN_VALUE;
+        for (int num : nums) {
+            if (num > first) {
+                third = second;
+                second = first;
+                first = num;
+            } else if (first > num && num > second) {
+                third = second;
+                second = num;
+            } else if (second > num && num > third) {
+                third = num;
+            }
+        }
+        return (int) (third == Long.MIN_VALUE ? first : third);
+    }
 }
