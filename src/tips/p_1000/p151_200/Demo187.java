@@ -1,9 +1,6 @@
 package tips.p_1000.p151_200;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 所有 DNA 都由一系列缩写为 'A'，'C'，'G' 和 'T' 的核苷酸组成，例如："ACGAATTCCG"。
@@ -42,15 +39,30 @@ public class Demo187 {
         return new ArrayList<>(res);
     }
 
+    public List<String> findRepeatedDnaSequences2(String s) {
+        List<String> ans = new ArrayList<>();
+        HashMap<String, Integer> map = new HashMap<>();
+        for (int i = 0; i <= s.length() - 10; i++) {
+            String str = s.substring(i, i + 10);
+            map.put(str, map.getOrDefault(str, 0) + 1);
+        }
+        for (String str : map.keySet()) {
+            if (map.get(str) > 1) {
+                ans.add(str);
+            }
+        }
+        return ans;
+    }
+
     /**
      * 'A' -> 00
      * 'C' -> 01
      * 'G' -> 10
      * 'T' -> 11
      */
-    public List<String> findRepeatedDnaSequences2(String s) {
+    public List<String> findRepeatedDnaSequences3(String s) {
         int len = s.length();
-        if (len == 0 || len < 10) {
+        if (len < 10) {
             return new ArrayList<>();
         }
         Set<String> res = new HashSet<>();
@@ -61,15 +73,14 @@ public class Demo187 {
         map['G' - 'A'] = 2;
         map['T' - 'A'] = 3;
         int key = 0;
-        char[] array = s.toCharArray();
         // 第一组单独初始化出来
         for (int i = 0; i < 10; i++) {
-            key = key << 2 | map[array[i] - 'A'];
+            key = key << 2 | map[s.charAt(i) - 'A'];
         }
         set.add(key);
 
         for (int i = 10; i < len; i++) {
-            key = key << 2 | map[array[i] - 'A'];
+            key = key << 2 | map[s.charAt(i) - 'A'];
             // 2 * 10 取后二十位 & 0xfffff
             key &= 0xfffff;
             if (set.contains(key)) {
@@ -89,21 +100,20 @@ public class Demo187 {
      * 'T' -> 84 1010 100
      * 取后三位已经能分辨四个碱基
      */
-    public List<String> findRepeatedDnaSequences3(String s) {
+    public List<String> findRepeatedDnaSequences4(String s) {
         int len = s.length();
-        if (len == 0 || len < 10) {
+        if (len < 10) {
             return new ArrayList<>();
         }
         Set<String> res = new HashSet<>();
         Set<Integer> set = new HashSet<>();
         int key = 0;
-        char[] array = s.toCharArray();
         for (int i = 0; i < 10; i++) {
-            key = key << 3 | (array[i] & 0x07);
+            key = key << 3 | (s.charAt(i) & 0x07);
         }
         set.add(key);
         for (int i = 10; i < len; i++) {
-            key = key << 3 | (array[i] & 0x07);
+            key = key << 3 | (s.charAt(i) & 0x07);
             // 3 * 10 取后面 三十位
             key &= 0x3fffffff;
             if (set.contains(key)) {
