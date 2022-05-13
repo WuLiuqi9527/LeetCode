@@ -39,9 +39,9 @@ public class Face0105 {
                     } else if (t == -1) {
                         --i;
                     }
-                    oneChance = !oneChance;
+                    oneChance = false;
                 } else {
-                    return oneChance;
+                    return false;
                 }
             }
             ++i;
