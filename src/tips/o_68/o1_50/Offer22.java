@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.ListNode;
+
 /**
  * 输入一个链表，输出该链表中倒数第 k 个节点。
  * 为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。
@@ -12,15 +14,6 @@ package tips.o_68.o1_50;
  * @author hc
  */
 public class Offer22 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode getKthFromEnd(ListNode head, int k) {
 

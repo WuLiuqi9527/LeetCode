@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.TreeNode;
+
 /**
  * 给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。
  * <p>示例:
@@ -9,16 +11,6 @@ package tips.f_109.f_10;
  * @author hc
  */
 public class Face0402 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public TreeNode sortedArrayToBST(int[] nums) {
         // 有序 找到中位点 构建二叉搜索树

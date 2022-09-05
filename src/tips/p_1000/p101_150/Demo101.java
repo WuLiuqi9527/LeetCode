@@ -1,30 +1,13 @@
 package tips.p_1000.p101_150;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉树，检查它是否是镜像对称的。
  *
  * @author hc
  */
 public class Demo101 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public boolean isSymmetric(TreeNode root) {
 

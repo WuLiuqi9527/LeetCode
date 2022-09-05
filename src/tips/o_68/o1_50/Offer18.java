@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.ListNode;
+
 /**
  * 给定单向链表的头指针和一个要删除的节点的值，定义一个函数删除该节点。
  * 返回删除后的链表的头节点。
@@ -19,15 +21,6 @@ package tips.o_68.o1_50;
  * @author hc
  */
 public class Offer18 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode deleteNode(ListNode head, int val) {
 

@@ -1,5 +1,7 @@
 package tips.p_1000.p201_250;
 
+import common.ListNode;
+
 /**
  * 删除链表中等于给定值 val 的所有节点。
  * 示例:
@@ -9,23 +11,6 @@ package tips.p_1000.p201_250;
  * @author hc
  */
 public class Demo203 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode removeElements1(ListNode head, int val) {
         while (head != null && head.val == val) {

@@ -1,5 +1,7 @@
 package tips.p_1000.p151_200;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -17,25 +19,6 @@ import java.util.Stack;
  * @author hc
  */
 public class Demo173 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     /**
      * 实现迭代器 中序遍历二叉搜索树

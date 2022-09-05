@@ -1,5 +1,7 @@
 package tips.p_1000.p401_450;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。
  * 返回二叉搜索树（有可能被更新）的根节点的引用。
@@ -12,25 +14,6 @@ package tips.p_1000.p401_450;
  * @author hc
  */
 public class Demo450 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public TreeNode deleteNode(TreeNode root, int key) {
         if (root == null) {

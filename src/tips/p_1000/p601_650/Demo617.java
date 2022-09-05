@@ -1,5 +1,7 @@
 package tips.p_1000.p601_650;
 
+import common.TreeNode;
+
 /**
  * 给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
  * 你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，
@@ -24,25 +26,6 @@ package tips.p_1000.p601_650;
  * @author hc
  */
 public class Demo617 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
         if (root1 == null) {

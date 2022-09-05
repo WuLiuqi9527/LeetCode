@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.TreeNode;
+
 /**
  * 请实现一个函数，用来判断一棵二叉树是不是对称的。
  * 如果一棵二叉树和它的镜像一样，那么它是对称的。
@@ -27,16 +29,6 @@ package tips.o_68.o1_50;
  * @author hc
  */
 public class Offer28 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {

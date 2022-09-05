@@ -1,5 +1,7 @@
 package tips.p_1000.p1_50;
 
+import common.ListNode;
+
 /**
  * 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
  * 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
@@ -19,23 +21,6 @@ package tips.p_1000.p1_50;
  * @author hc
  */
 public class Demo24 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode swapPairs(ListNode head) {
 

@@ -1,5 +1,7 @@
 package tips.p_1000.p751_800;
 
+import common.TreeNode;
+
 /**
  * 给你一个二叉搜索树的根节点 root ，返回 树中任意两不同节点值之间的最小差值 。
  * <p>
@@ -10,25 +12,6 @@ package tips.p_1000.p751_800;
  * @author hc
  */
 public class Demo783 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     private TreeNode pre = null;
     private int res = Integer.MAX_VALUE;

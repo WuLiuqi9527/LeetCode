@@ -1,5 +1,7 @@
 package tips.p_1000.p851_900;
 
+import common.TreeNode;
+
 import java.util.*;
 
 /**
@@ -23,16 +25,6 @@ import java.util.*;
  * @author hc
  */
 public class Demo863 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     // 用map记录每个节点的父节点
     private Map<TreeNode, TreeNode> parents = new HashMap<>();

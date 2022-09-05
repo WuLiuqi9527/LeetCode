@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.TreeNode;
+
 /**
  * 给你二叉树的根结点 root ，请你将它展开为一个单链表：
  * 展开后的单链表应该同样使用 TreeNode ，
@@ -17,25 +19,6 @@ package tips.p_1000.p101_150;
  * @author hc
  */
 public class Demo114 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public void flatten(TreeNode root) {
         if (root == null) {

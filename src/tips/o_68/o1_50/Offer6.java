@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.ListNode;
+
 import java.util.Stack;
 
 /**
@@ -13,15 +15,6 @@ import java.util.Stack;
  * @author hc
  */
 public class Offer6 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public int[] reversePrint(ListNode head) {
         Stack<Integer> stack = new Stack<>();

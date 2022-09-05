@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.TreeNode;
+
 /**
  * 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
  * <p>限制：
@@ -8,16 +10,6 @@ package tips.o_68.o1_50;
  * @author hc
  */
 public class Offer7 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return preIn(0, preorder.length-1, 0, inorder.length-1, preorder, inorder);

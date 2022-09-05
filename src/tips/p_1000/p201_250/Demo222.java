@@ -1,5 +1,7 @@
 package tips.p_1000.p201_250;
 
+import common.TreeNode;
+
 /**
  * 给你一棵 完全二叉树 的根节点 root ，求出该树的节点个数。
  * <p>
@@ -10,25 +12,6 @@ package tips.p_1000.p201_250;
  * @author hc
  */
 public class Demo222 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public int countNodes(TreeNode root) {
 

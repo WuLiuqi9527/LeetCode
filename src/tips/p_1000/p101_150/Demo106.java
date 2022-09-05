@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.TreeNode;
+
 /**
  * 根据一棵树的中序遍历与后序遍历构造二叉树。
  * 注意:
@@ -17,25 +19,6 @@ package tips.p_1000.p101_150;
  * @author hc
  */
 public class Demo106 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         return postIn(0, inorder.length - 1, 0, postorder.length - 1, inorder, postorder);

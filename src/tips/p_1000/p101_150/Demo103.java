@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.TreeNode;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -25,25 +27,6 @@ import java.util.Queue;
  * @author hc
  */
 public class Demo103 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
 

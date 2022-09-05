@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.TreeNode;
+
 /**
  * 请完成一个函数，输入一个二叉树，该函数输出它的镜像。
  * <p>例如输入：
@@ -23,16 +25,6 @@ package tips.o_68.o1_50;
  * @author hc
  */
 public class Offer27 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public TreeNode mirrorTree(TreeNode root) {
 

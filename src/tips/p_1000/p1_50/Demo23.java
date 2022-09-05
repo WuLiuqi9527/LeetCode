@@ -1,5 +1,7 @@
 package tips.p_1000.p1_50;
 
+import common.ListNode;
+
 import java.util.PriorityQueue;
 
 /**
@@ -21,23 +23,6 @@ import java.util.PriorityQueue;
  * @author hc
  */
 public class Demo23 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode mergeKLists(ListNode[] lists) {
 

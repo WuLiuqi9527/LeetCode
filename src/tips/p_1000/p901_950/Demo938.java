@@ -1,5 +1,7 @@
 package tips.p_1000.p901_950;
 
+import common.TreeNode;
+
 /**
  * 给定 二叉搜索树 的根结点 root，返回值位于范围 [low, high] 之间的所有结点的值的和。
  * <p>提示：
@@ -11,25 +13,6 @@ package tips.p_1000.p901_950;
  * @author hc
  */
 public class Demo938 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     private int res = 0;
 

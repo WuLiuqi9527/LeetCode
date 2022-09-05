@@ -1,30 +1,13 @@
 package tips.p_1000.p201_250;
 
+import common.TreeNode;
+
 /**
  * 翻转一棵二叉树。
  *
  * @author hc
  */
 public class Demo226 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public TreeNode invertTree(TreeNode root) {
 

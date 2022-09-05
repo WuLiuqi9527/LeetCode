@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,16 +18,6 @@ import java.util.List;
  * @author hc
  */
 public class Face0406 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         if (root == null) {

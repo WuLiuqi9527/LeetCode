@@ -1,5 +1,7 @@
 package tips.p_1000.p1_50;
 
+import common.ListNode;
+
 /**
  * 给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。
  * k 是一个正整数，它的值小于或等于链表的长度。
@@ -13,23 +15,6 @@ package tips.p_1000.p1_50;
  * @author hc
  */
 public class Demo25 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode reverseKGroup(ListNode head, int k) {
 

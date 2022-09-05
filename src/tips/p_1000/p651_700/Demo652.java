@@ -1,5 +1,7 @@
 package tips.p_1000.p651_700;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,25 +29,6 @@ import java.util.Map;
  * @author hc
  */
 public class Demo652 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     Map<String, Integer> count;
     List<TreeNode> ans;

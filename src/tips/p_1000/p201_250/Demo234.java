@@ -1,5 +1,7 @@
 package tips.p_1000.p201_250;
 
+import common.ListNode;
+
 /**
  * 请判断一个链表是否为回文链表。
  * <p>
@@ -14,23 +16,6 @@ package tips.p_1000.p201_250;
  * @author hc
  */
 public class Demo234 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     /**
      * 快慢指针 + 反转链表

@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.ListNode;
+
 /**
  * 给定两个用链表表示的整数，每个节点包含一个数位。
  * 这些数位是反向存放的，也就是个位排在链表首部。
@@ -15,15 +17,6 @@ package tips.f_109.f_10;
  * @author hc
  */
 public class Face0205 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null) {

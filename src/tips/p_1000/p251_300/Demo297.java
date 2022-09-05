@@ -1,5 +1,7 @@
 package tips.p_1000.p251_300;
 
+import common.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -9,16 +11,6 @@ import java.util.Queue;
  * @author hc
  */
 public class Demo297 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public class Codec {
 

@@ -1,5 +1,7 @@
 package tips.p_1000.p401_450;
 
+import common.TreeNode;
+
 /**
  * 序列化是将数据结构或对象转换为一系列位的过程，以便它可以存储在文件或内存缓冲区中，
  * 或通过网络连接链路传输，以便稍后在同一个或另一个计算机环境中重建。
@@ -21,16 +23,6 @@ package tips.p_1000.p401_450;
  * @author hc
  */
 public class Demo449 {
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     // Encodes a tree to a single string.
     public static String serialize(TreeNode root) {

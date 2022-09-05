@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.ListNode;
+
 /**
  * 对链表进行插入排序。
  * 从第一个元素开始，该链表可以被认为已经部分排序（用黑色表示）。
@@ -12,23 +14,6 @@ package tips.p_1000.p101_150;
  * @author hc
  */
 public class Demo147 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode insertionSortList(ListNode head) {
         ListNode dummy = new ListNode(-1);

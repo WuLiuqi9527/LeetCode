@@ -1,5 +1,7 @@
 package tips.f_109.f_17;
 
+import common.TreeNode;
+
 /**
  * 二叉树数据结构TreeNode可用来表示单向链表（其中left置空，right为下一个链表节点）。
  * 实现一个方法，把二叉搜索树转换为单向链表，
@@ -15,16 +17,6 @@ package tips.f_109.f_17;
  * @author hc
  */
 public class Face1712 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     private TreeNode pre;
 

@@ -1,5 +1,7 @@
 package tips.p_1000.p51_100;
 
+import common.ListNode;
+
 /**
  * 给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。
  * <p>
@@ -13,23 +15,6 @@ package tips.p_1000.p51_100;
  * @author hc
  */
 public class Demo61 {
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode rotateRight(ListNode head, int k) {
 

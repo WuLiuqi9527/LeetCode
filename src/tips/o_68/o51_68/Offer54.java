@@ -1,5 +1,7 @@
 package tips.o_68.o51_68;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,16 +13,6 @@ import java.util.List;
  * @author hc
  */
 public class Offer54 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public int kthLargest(TreeNode root, int k) {
         // 中序遍历 动态数组ArrayList

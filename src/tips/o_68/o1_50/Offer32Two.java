@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,16 +28,6 @@ import java.util.Queue;
  * @author hc
  */
 public class Offer32Two {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
 

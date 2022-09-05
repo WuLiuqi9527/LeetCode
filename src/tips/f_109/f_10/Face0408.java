@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.TreeNode;
+
 /**
  * 设计并实现一个算法，找出二叉树中某两个节点的第一个共同祖先。
  * 不得将其他的节点存储在另外的数据结构中。注意：这不一定是二叉搜索树。
@@ -18,16 +20,6 @@ package tips.f_109.f_10;
  * @author hc
  */
 public class Face0408 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) {

@@ -1,5 +1,7 @@
 package tips.p_1000.p951_1000;
 
+import common.TreeNode;
+
 /**
  * 在二叉树中，根节点位于深度 0 处，每个深度为 k 的节点的子节点位于深度 k+1 处。
  * 如果二叉树的两个节点深度相同，但 父节点不同 ，则它们是一对堂兄弟节点。
@@ -21,25 +23,6 @@ package tips.p_1000.p951_1000;
  * @author hc
  */
 public class Demo993 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     private int xpar, xdep, ypar, ydep;
 

@@ -1,5 +1,7 @@
 package tips.p_1000.p501_550;
 
+import common.TreeNode;
+
 /**
  * 给定一棵二叉树，你需要计算它的直径长度。
  * 一棵二叉树的直径长度是任意两个结点路径长度中的最大值。
@@ -18,25 +20,6 @@ package tips.p_1000.p501_550;
  * @author hc
  */
 public class Demo543 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     private int max = 0;
 

@@ -1,5 +1,7 @@
 package tips.p_1000.p51_100;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉树，判断其是否是一个有效的二叉搜索树。
  * <p>
@@ -18,25 +20,6 @@ package tips.p_1000.p51_100;
  * @author hc
  */
 public class Demo98 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     long cur = Long.MIN_VALUE;
     public boolean isValidBST(TreeNode root) {

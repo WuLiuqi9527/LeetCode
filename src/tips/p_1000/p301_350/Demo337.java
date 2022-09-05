@@ -1,5 +1,7 @@
 package tips.p_1000.p301_350;
 
+import common.TreeNode;
+
 /**
  * 在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。
  * 这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子 有且只有一个 “父“房子与之相连。
@@ -21,16 +23,6 @@ package tips.p_1000.p301_350;
  * @author hc
  */
 public class Demo337 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public int rob(TreeNode root) {
         int[] res = tryRob(root);

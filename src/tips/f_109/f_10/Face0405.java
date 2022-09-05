@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,16 +11,6 @@ import java.util.List;
  * @author hc
  */
 public class Face0405 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public boolean isValidBST(TreeNode root) {
         return isBST(root, Long.MIN_VALUE, Long.MAX_VALUE);

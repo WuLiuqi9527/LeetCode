@@ -1,5 +1,7 @@
 package tips.p_1000.p1_50;
 
+import common.ListNode;
+
 /**
  * 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
  * 输入：l1 = [1,2,4], l2 = [1,3,4]
@@ -8,23 +10,6 @@ package tips.p_1000.p1_50;
  * @author hc
  */
 public class Demo21 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummyNode = new ListNode(-1);

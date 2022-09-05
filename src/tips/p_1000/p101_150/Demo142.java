@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.ListNode;
+
 import java.util.HashSet;
 
 /**
@@ -14,16 +16,6 @@ import java.util.HashSet;
  * @author hc
  */
 public class Demo142 {
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 
     public ListNode detectCycle(ListNode head) {
 

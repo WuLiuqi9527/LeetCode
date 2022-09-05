@@ -1,5 +1,7 @@
 package tips.p_1000.p201_250;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
  * <p>
@@ -8,16 +10,6 @@ package tips.p_1000.p201_250;
  * @author hc
  */
 public class Demo235 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 

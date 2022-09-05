@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,25 +14,6 @@ import java.util.List;
  * @author hc
  */
 public class Offer34 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     List<List<Integer>> res;
     List<Integer> list;

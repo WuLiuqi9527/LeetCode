@@ -1,5 +1,7 @@
 package tips.p_1000.p401_450;
 
+import common.ListNode;
+
 import java.util.Stack;
 
 /**
@@ -17,15 +19,6 @@ import java.util.Stack;
  * @author hc
  */
 public class Demo445 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 

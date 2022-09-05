@@ -1,28 +1,13 @@
 package tips.p_1000.p101_150;
 
+import common.ListNode;
+
 /**
  * 给你链表的头结点 head ，请将其按 升序 排列并返回 排序后的链表 。
  *
  * @author hc
  */
 public class Demo148 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode sortList(ListNode head) {
         return mergeSort(head);

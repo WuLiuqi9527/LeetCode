@@ -1,5 +1,7 @@
 package tips.o_68.o51_68;
 
+import common.ListNode;
+
 /**
  * 输入两个链表，找出它们的第一个公共节点。
  * 注意：
@@ -11,16 +13,6 @@ package tips.o_68.o51_68;
  * @author hc
  */
 public class Offer52 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 

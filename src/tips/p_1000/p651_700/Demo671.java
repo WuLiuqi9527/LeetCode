@@ -1,5 +1,7 @@
 package tips.p_1000.p651_700;
 
+import common.TreeNode;
+
 /**
  * 给定一个非空特殊的二叉树，每个节点都是正数，并且每个节点的子节点数量只能为 2 或 0。如果一个节点有两个子节点的话，那么该节点的值等于两个子节点中较小的一个。
  * 更正式地说，root.val = min(root.left.val, root.right.val) 总成立。
@@ -20,25 +22,6 @@ package tips.p_1000.p651_700;
  * @author hc
  */
 public class Demo671 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     private int res = -1;
 

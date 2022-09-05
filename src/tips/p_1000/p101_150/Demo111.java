@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉树，找出其最小深度。
  * 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
@@ -9,25 +11,6 @@ package tips.p_1000.p101_150;
  * @author hc
  */
 public class Demo111 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public int minDepth(TreeNode root) {
 

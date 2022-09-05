@@ -1,7 +1,6 @@
 package tips.f_109.f_10;
 
-import java.util.HashMap;
-import java.util.Map;
+import common.TreeNode;
 
 /**
  * 给定一棵二叉树，其中每个节点都含有一个整数数值(该值或正或负)。
@@ -18,16 +17,6 @@ import java.util.Map;
  * @author hc
  */
 public class Face0412 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     private int res = 0;
 

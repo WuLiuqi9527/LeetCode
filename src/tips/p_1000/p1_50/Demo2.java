@@ -1,5 +1,8 @@
 package tips.p_1000.p1_50;
 
+import common.ListNode;
+import utils.PrintUtils;
+
 import java.util.ArrayList;
 
 /**
@@ -11,25 +14,6 @@ import java.util.ArrayList;
  * 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
  */
 public class Demo2 {
-
-    public static class ListNode {
-
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-    }
 
     /**
      * 1、转数字，求和，转回链表 (X) 链表可以很长，而 int long.. 取值范围有限，会溢出
@@ -103,25 +87,8 @@ public class Demo2 {
         ListNode listNode1 = new ListNode(2, new ListNode(4, new ListNode(3)));
         ListNode listNode2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
-        printNode(listNode1);
-        printNode(listNode2);
-        printNode(new Demo2().addTwoNumbers(listNode1, listNode2));
-    }
-
-    /**
-     * 打印链表
-     *
-     * @param listNode
-     */
-    public static void printNode(ListNode listNode) {
-        if (listNode == null) {
-            return;
-        }
-        String str = " " + listNode.val;
-        while (listNode.next != null) {
-            str += "->" + listNode.next.val;
-            listNode = listNode.next;
-        }
-        System.out.println(str += " ");
+        PrintUtils.printListNode(listNode1);
+        PrintUtils.printListNode(listNode2);
+        PrintUtils.printListNode(new Demo2().addTwoNumbers(listNode1, listNode2));
     }
 }

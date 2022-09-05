@@ -1,5 +1,7 @@
 package tips.p_1000.p51_100;
 
+import common.TreeNode;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,25 +11,6 @@ import java.util.List;
  * @author hc
  */
 public class Demo95 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public List<TreeNode> generateTrees(int n) {
 

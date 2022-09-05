@@ -1,5 +1,8 @@
 package tips.f_109.f_10;
 
+import common.ListNode;
+import common.TreeNode;
+
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,25 +17,6 @@ import java.util.List;
  * @author hc
  */
 public class Face0403 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode[] listOfDepth(TreeNode tree) {
         if (tree == null) {

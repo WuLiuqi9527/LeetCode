@@ -1,5 +1,7 @@
 package tips.o_68.o1_50;
 
+import common.ListNode;
+
 /**
  * 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
  * <p>示例:
@@ -11,23 +13,6 @@ package tips.o_68.o1_50;
  * @author hc
  */
 public class Offer24 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode reverseList(ListNode head) {
 

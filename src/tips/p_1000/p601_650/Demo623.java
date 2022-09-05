@@ -1,5 +1,7 @@
 package tips.p_1000.p601_650;
 
+import common.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -25,25 +27,6 @@ import java.util.Deque;
  * 1 <= depth <= the depth of tree + 1
  */
 public class Demo623 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public TreeNode addOneRow(TreeNode root, int val, int depth) {
         if (depth == 1) {

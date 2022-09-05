@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.ListNode;
+
 /**
  * 给定一个链表，判断链表中是否有环。
  * 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。
@@ -16,16 +18,6 @@ package tips.p_1000.p101_150;
  * @author hc
  */
 public class Demo141 {
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 
     public boolean hasCycle(ListNode head) {
 

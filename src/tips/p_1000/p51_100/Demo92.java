@@ -1,5 +1,7 @@
 package tips.p_1000.p51_100;
 
+import common.ListNode;
+
 /**
  * 反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。
  * <p>
@@ -13,23 +15,6 @@ package tips.p_1000.p51_100;
  * @author hc
  */
 public class Demo92 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode reverseBetween(ListNode head, int left, int right) {
 

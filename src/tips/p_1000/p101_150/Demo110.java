@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉树，判断它是否是高度平衡的二叉树。
  * <p>
@@ -9,25 +11,6 @@ package tips.p_1000.p101_150;
  * @author hc
  */
 public class Demo110 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public boolean isBalanced(TreeNode root) {
 

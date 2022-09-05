@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.ListNode;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -14,15 +16,6 @@ import java.util.Deque;
  * @author hc
  */
 public class Face0204 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode partition(ListNode head, int x) {
         ListNode cur = head, dummy = new ListNode(-1);

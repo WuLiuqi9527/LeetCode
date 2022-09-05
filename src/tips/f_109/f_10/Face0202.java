@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.ListNode;
+
 /**
  * 实现一种算法，找出单向链表中倒数第 k 个节点。返回该节点的值。
  * 注意：本题相对原题稍作改动
@@ -12,15 +14,6 @@ package tips.f_109.f_10;
  * @author hc
  */
 public class Face0202 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public int kthToLast(ListNode head, int k) {
         // 快慢指针

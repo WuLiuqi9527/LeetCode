@@ -1,5 +1,7 @@
 package tips.p_1000.p401_450;
 
+import common.TreeNode;
+
 /**
  * 计算给定二叉树的所有左叶子之和。
  * <p>
@@ -14,16 +16,6 @@ package tips.p_1000.p401_450;
  * @author hc
  */
 public class Demo404 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public int sumOfLeftLeaves(TreeNode root) {
 

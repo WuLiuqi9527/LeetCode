@@ -1,5 +1,7 @@
 package tips.p_1000.p101_150;
 
+import common.ListNode;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -15,23 +17,6 @@ import java.util.Deque;
  * @author hc
  */
 public class Demo143 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public void reorderList(ListNode head) {
 

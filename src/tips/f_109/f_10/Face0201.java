@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.ListNode;
+
 /**
  * 编写代码，移除未排序链表中的重复节点。保留最开始出现的节点。
  * <p>示例1:
@@ -15,15 +17,6 @@ package tips.f_109.f_10;
  * @author hc
  */
 public class Face0201 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public ListNode removeDuplicateNodes(ListNode head) {
 

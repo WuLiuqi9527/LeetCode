@@ -1,5 +1,7 @@
 package tips.f_109.f_10;
 
+import common.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,15 +19,6 @@ import java.util.List;
  * @author hc
  */
 public class Face0206 {
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public boolean isPalindrome(ListNode head) {
         List<Integer> vals = new ArrayList<Integer>();

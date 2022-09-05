@@ -1,5 +1,7 @@
 package tips.p_1000.p401_450;
 
+import common.TreeNode;
+
 /**
  * 给定一个二叉树，它的每个结点都存放着一个整数值。
  * 找出路径和等于给定数值的路径总数。
@@ -10,25 +12,6 @@ package tips.p_1000.p401_450;
  * @author hc
  */
 public class Demo437 {
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public int pathSum(TreeNode root, int sum) {
 
