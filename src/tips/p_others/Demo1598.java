@@ -43,10 +43,4 @@ public class Demo1598 {
         }
         return depth;
     }
-
-    public static void main(String[] args) {
-        System.out.println(new Demo1598().minOperations(new String[]{"d1/", "d2/", "../", "d21/", "./"}));
-        System.out.println(new Demo1598().minOperations(new String[]{"d1/", "d2/", "./", "d3/", "../", "d31/"}));
-        System.out.println(new Demo1598().minOperations(new String[]{"d1/", "../", "../", "../"}));
-    }
 }
