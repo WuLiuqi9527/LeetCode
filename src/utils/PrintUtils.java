@@ -4,12 +4,13 @@ import common.ListNode;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PrintUtils {
 
     // 打印 int 数组
     public static void printArray(int[] arr) {
-        System.out.println(Arrays.stream(arr).boxed().toList());
+        System.out.println(Arrays.stream(arr).boxed().collect(Collectors.toList()));
     }
 
     // 打印 链表
